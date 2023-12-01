@@ -9,6 +9,7 @@ using BackEndStructuer.Helpers;
 using BackEndStructuer.Helpers.OneSignal;
 using BackEndStructuer.Repository;
 using BackEndStructuer.Services;
+using NewEppBackEnd.Services;
 
 namespace BackEndStructuer.Extensions
 {
@@ -24,6 +25,11 @@ namespace BackEndStructuer.Extensions
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IRoleService, RoleService>();
             services.AddScoped<AuthorizeActionFilter>();
+            services.AddScoped<ICategoryService, CategoryService>();
+            services.AddScoped<IFileService, FileService>();
+            services.AddScoped<IFeatureService, FeatureService>();
+            services.AddScoped<IGovernmentService, GovernmentService>();
+            services.AddScoped<IStorageService, StorageService>();
 
             return services;
         }

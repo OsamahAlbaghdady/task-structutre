@@ -15,18 +15,21 @@ namespace BackEndStructuer.DATA
         public DbSet<Role> Roles { get; set; }
         public DbSet<Permission> Permissions { get; set; }
         public DbSet<RolePermission> RolePermissions { get; set; }
+        
+        public DbSet<Category> Categories { get; set; }
 
- 
+        public DbSet<Feature> Features { get; set; }
+        
         public DbSet<Article> Articles { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
           
             modelBuilder.Entity<RolePermission>().HasKey(rp => new { rp.RoleId, rp.PermissionId });
-
             
             // new DbInitializer(modelBuilder).Seed();
 
+        
         }
         
     }

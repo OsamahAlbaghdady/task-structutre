@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/Users/omarmudhaffar/Desktop/BackEndStructure/BackEndStructuer/BackEndStructuer.csproj": {}
+    "C:\\Users\\Osamah\\Desktop\\telegram_bot-main\\ff\\task-structutre\\BackEndStructuer\\BackEndStructuer.csproj": {}
   },
   "projects": {
-    "/Users/omarmudhaffar/Desktop/BackEndStructure/BackEndStructuer/BackEndStructuer.csproj": {
+    "C:\\Users\\Osamah\\Desktop\\telegram_bot-main\\ff\\task-structutre\\BackEndStructuer\\BackEndStructuer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/omarmudhaffar/Desktop/BackEndStructure/BackEndStructuer/BackEndStructuer.csproj",
+        "projectUniqueName": "C:\\Users\\Osamah\\Desktop\\telegram_bot-main\\ff\\task-structutre\\BackEndStructuer\\BackEndStructuer.csproj",
         "projectName": "BackEndStructuer",
-        "projectPath": "/Users/omarmudhaffar/Desktop/BackEndStructure/BackEndStructuer/BackEndStructuer.csproj",
-        "packagesPath": "/Users/omarmudhaffar/.nuget/packages/",
-        "outputPath": "/Users/omarmudhaffar/Desktop/BackEndStructure/BackEndStructuer/obj/",
+        "projectPath": "C:\\Users\\Osamah\\Desktop\\telegram_bot-main\\ff\\task-structutre\\BackEndStructuer\\BackEndStructuer.csproj",
+        "packagesPath": "C:\\Users\\Osamah\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Osamah\\Desktop\\telegram_bot-main\\ff\\task-structutre\\BackEndStructuer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/omarmudhaffar/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Osamah\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -108,7 +110,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.203/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

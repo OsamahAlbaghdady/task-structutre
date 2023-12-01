@@ -4,6 +4,6 @@ namespace BackEndStructuer.Utils
     {
         public const int PageSize = 10;
 
-        public static string Url = "";
+        public static string Url = "http://localhost";
     }
 }

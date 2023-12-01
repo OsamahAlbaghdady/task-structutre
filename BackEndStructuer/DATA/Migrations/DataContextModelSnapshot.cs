@@ -78,6 +78,83 @@ namespace BackEndStructuer.Data.Migrations
                     b.ToTable("Articles");
                 });
 
+            modelBuilder.Entity("BackEndStructuer.Entities.Category", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime?>("CreationDate")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<bool>("Deleted")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("Image")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Categories");
+                });
+
+            modelBuilder.Entity("BackEndStructuer.Entities.Feature", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime?>("CreationDate")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<bool>("Deleted")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("Image")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("text");
+
+                    b.Property<int?>("StorageId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("StorageId");
+
+                    b.ToTable("Features");
+                });
+
+            modelBuilder.Entity("BackEndStructuer.Entities.Government", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime?>("CreationDate")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<bool>("Deleted")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Government");
+                });
+
             modelBuilder.Entity("BackEndStructuer.Entities.Permission", b =>
                 {
                     b.Property<int>("Id")
@@ -139,6 +216,86 @@ namespace BackEndStructuer.Data.Migrations
                     b.ToTable("RolePermissions");
                 });
 
+            modelBuilder.Entity("BackEndStructuer.Entities.Storage", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int?>("CategoryId")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime?>("CreationDate")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<bool>("Deleted")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("text");
+
+                    b.Property<int?>("GovernmentId")
+                        .HasColumnType("integer");
+
+                    b.Property<bool>("IsReserved")
+                        .HasColumnType("boolean");
+
+                    b.Property<double?>("Lat")
+                        .HasColumnType("double precision");
+
+                    b.Property<double?>("Lng")
+                        .HasColumnType("double precision");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("text");
+
+                    b.Property<int?>("NumberOfRom")
+                        .HasColumnType("integer");
+
+                    b.Property<int?>("Price")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Space")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CategoryId");
+
+                    b.HasIndex("GovernmentId");
+
+                    b.ToTable("Storage");
+                });
+
+            modelBuilder.Entity("BackEndStructuer.Entities.StorageFile", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime?>("CreationDate")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<bool>("Deleted")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("File")
+                        .HasColumnType("text");
+
+                    b.Property<int?>("StorageId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("StorageId");
+
+                    b.ToTable("StorageFile");
+                });
+
             modelBuilder.Entity("BackEndStructuer.Entities.AppUser", b =>
                 {
                     b.HasOne("BackEndStructuer.Entities.Role", "Role")
@@ -146,6 +303,13 @@ namespace BackEndStructuer.Data.Migrations
                         .HasForeignKey("RoleId");
 
                     b.Navigation("Role");
+                });
+
+            modelBuilder.Entity("BackEndStructuer.Entities.Feature", b =>
+                {
+                    b.HasOne("BackEndStructuer.Entities.Storage", null)
+                        .WithMany("Features")
+                        .HasForeignKey("StorageId");
                 });
 
             modelBuilder.Entity("BackEndStructuer.Entities.RolePermission", b =>
@@ -167,6 +331,38 @@ namespace BackEndStructuer.Data.Migrations
                     b.Navigation("Role");
                 });
 
+            modelBuilder.Entity("BackEndStructuer.Entities.Storage", b =>
+                {
+                    b.HasOne("BackEndStructuer.Entities.Category", "Category")
+                        .WithMany("Storages")
+                        .HasForeignKey("CategoryId");
+
+                    b.HasOne("BackEndStructuer.Entities.Government", "Government")
+                        .WithMany("Storages")
+                        .HasForeignKey("GovernmentId");
+
+                    b.Navigation("Category");
+
+                    b.Navigation("Government");
+                });
+
+            modelBuilder.Entity("BackEndStructuer.Entities.StorageFile", b =>
+                {
+                    b.HasOne("BackEndStructuer.Entities.Storage", null)
+                        .WithMany("Files")
+                        .HasForeignKey("StorageId");
+                });
+
+            modelBuilder.Entity("BackEndStructuer.Entities.Category", b =>
+                {
+                    b.Navigation("Storages");
+                });
+
+            modelBuilder.Entity("BackEndStructuer.Entities.Government", b =>
+                {
+                    b.Navigation("Storages");
+                });
+
             modelBuilder.Entity("BackEndStructuer.Entities.Permission", b =>
                 {
                     b.Navigation("RolePermissions");
@@ -175,6 +371,13 @@ namespace BackEndStructuer.Data.Migrations
             modelBuilder.Entity("BackEndStructuer.Entities.Role", b =>
                 {
                     b.Navigation("RolePermissions");
+                });
+
+            modelBuilder.Entity("BackEndStructuer.Entities.Storage", b =>
+                {
+                    b.Navigation("Features");
+
+                    b.Navigation("Files");
                 });
 #pragma warning restore 612, 618
         }

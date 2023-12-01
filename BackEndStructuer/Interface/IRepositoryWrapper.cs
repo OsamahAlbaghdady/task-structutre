@@ -11,6 +11,14 @@ namespace BackEndStructuer.Repository
         IPermissionRepository Permission { get; }
         
         IRoleRepository Role { get; }
+
+        ICategoryRepository Category { get; }
         
+        IFeatureRepository Feature { get; }
+        IGovernmentRepository Government { get; }
+        IStorageRepository Storage { get; }
+        
+        IStorageFileRepository StorageFile { get; }
+
     }
 }

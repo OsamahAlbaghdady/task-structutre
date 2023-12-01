@@ -1,0 +1,490 @@
+2023-12-02 00:39:19.867 +03:00 [ERR] Error in /api/storages POST Self referencing loop detected with type 'BackEndStructuer.Entities.Storage'. Path 'government.storages'.    at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.CheckForCircularReference(JsonWriter writer, Object value, JsonProperty property, JsonContract contract, JsonContainerContract containerContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeList(JsonWriter writer, IEnumerable values, JsonArrayContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeValue(JsonWriter writer, Object value, JsonContract valueContract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeObject(JsonWriter writer, Object value, JsonObjectContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeValue(JsonWriter writer, Object value, JsonContract valueContract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeObject(JsonWriter writer, Object value, JsonObjectContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeValue(JsonWriter writer, Object value, JsonContract valueContract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.Serialize(JsonWriter jsonWriter, Object value, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.SerializeInternal(JsonWriter jsonWriter, Object value, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.Serialize(JsonWriter jsonWriter, Object value)
+   at Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeResultAsync>g__Logged|22_0(ResourceInvoker invoker, IActionResult result)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at BackEndStructuer.Helpers.CustomPayloadTooLargeMiddleware.Invoke(HttpContext context) in C:\Users\Osamah\Desktop\telegram_bot-main\ff\task-structutre\BackEndStructuer\Helpers\CustomPayloadTooLargeFilter.cs:line 26
+   at BackEndStructuer.Helpers.CustomUnauthorizedMiddleware.InvokeAsync(HttpContext context) in C:\Users\Osamah\Desktop\telegram_bot-main\ff\task-structutre\BackEndStructuer\Helpers\CustomUnauthorizedFilter.cs:line 25
+Newtonsoft.Json.JsonSerializationException: Self referencing loop detected with type 'BackEndStructuer.Entities.Storage'. Path 'government.storages'.
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.CheckForCircularReference(JsonWriter writer, Object value, JsonProperty property, JsonContract contract, JsonContainerContract containerContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeList(JsonWriter writer, IEnumerable values, JsonArrayContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeValue(JsonWriter writer, Object value, JsonContract valueContract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeObject(JsonWriter writer, Object value, JsonObjectContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeValue(JsonWriter writer, Object value, JsonContract valueContract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeObject(JsonWriter writer, Object value, JsonObjectContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeValue(JsonWriter writer, Object value, JsonContract valueContract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.Serialize(JsonWriter jsonWriter, Object value, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.SerializeInternal(JsonWriter jsonWriter, Object value, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.Serialize(JsonWriter jsonWriter, Object value)
+   at Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeResultAsync>g__Logged|22_0(ResourceInvoker invoker, IActionResult result)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at BackEndStructuer.Helpers.CustomPayloadTooLargeMiddleware.Invoke(HttpContext context) in C:\Users\Osamah\Desktop\telegram_bot-main\ff\task-structutre\BackEndStructuer\Helpers\CustomPayloadTooLargeFilter.cs:line 26
+   at BackEndStructuer.Helpers.CustomUnauthorizedMiddleware.InvokeAsync(HttpContext context) in C:\Users\Osamah\Desktop\telegram_bot-main\ff\task-structutre\BackEndStructuer\Helpers\CustomUnauthorizedFilter.cs:line 25
+2023-12-02 01:10:30.005 +03:00 [ERR] Error in /api/storages POST Error mapping types.
+
+Mapping types:
+StorageForm -> Storage
+BackEndStructuer.DATA.DTOs.Storage.StorageForm -> BackEndStructuer.Entities.Storage
+
+Type Map configuration:
+StorageForm -> Storage
+BackEndStructuer.DATA.DTOs.Storage.StorageForm -> BackEndStructuer.Entities.Storage
+
+Destination Member:
+Files
+    at lambda_method139(Closure, Object, Storage, ResolutionContext)
+   at BackEndStructuer.Services.StorageService.add(StorageForm storageForm) in C:\Users\Osamah\Desktop\telegram_bot-main\ff\task-structutre\BackEndStructuer\Services\StorageService.cs:line 52
+   at BackEndStructuer.Controllers.StoragesController.Create(StorageForm storageForm) in C:\Users\Osamah\Desktop\telegram_bot-main\ff\task-structutre\BackEndStructuer\Controllers\StoragesController.cs:line 23
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at BackEndStructuer.Helpers.CustomPayloadTooLargeMiddleware.Invoke(HttpContext context) in C:\Users\Osamah\Desktop\telegram_bot-main\ff\task-structutre\BackEndStructuer\Helpers\CustomPayloadTooLargeFilter.cs:line 26
+   at BackEndStructuer.Helpers.CustomUnauthorizedMiddleware.InvokeAsync(HttpContext context) in C:\Users\Osamah\Desktop\telegram_bot-main\ff\task-structutre\BackEndStructuer\Helpers\CustomUnauthorizedFilter.cs:line 25
+AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+StorageForm -> Storage
+BackEndStructuer.DATA.DTOs.Storage.StorageForm -> BackEndStructuer.Entities.Storage
+
+Type Map configuration:
+StorageForm -> Storage
+BackEndStructuer.DATA.DTOs.Storage.StorageForm -> BackEndStructuer.Entities.Storage
+
+Destination Member:
+Files
+
+ ---> AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+FormFile -> StorageFile
+Microsoft.AspNetCore.Http.FormFile -> BackEndStructuer.Entities.StorageFile
+   at lambda_method140(Closure, IFormFile, StorageFile, ResolutionContext)
+   at lambda_method139(Closure, Object, Storage, ResolutionContext)
+   --- End of inner exception stack trace ---
+   at lambda_method139(Closure, Object, Storage, ResolutionContext)
+   at BackEndStructuer.Services.StorageService.add(StorageForm storageForm) in C:\Users\Osamah\Desktop\telegram_bot-main\ff\task-structutre\BackEndStructuer\Services\StorageService.cs:line 52
+   at BackEndStructuer.Controllers.StoragesController.Create(StorageForm storageForm) in C:\Users\Osamah\Desktop\telegram_bot-main\ff\task-structutre\BackEndStructuer\Controllers\StoragesController.cs:line 23
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at BackEndStructuer.Helpers.CustomPayloadTooLargeMiddleware.Invoke(HttpContext context) in C:\Users\Osamah\Desktop\telegram_bot-main\ff\task-structutre\BackEndStructuer\Helpers\CustomPayloadTooLargeFilter.cs:line 26
+   at BackEndStructuer.Helpers.CustomUnauthorizedMiddleware.InvokeAsync(HttpContext context) in C:\Users\Osamah\Desktop\telegram_bot-main\ff\task-structutre\BackEndStructuer\Helpers\CustomUnauthorizedFilter.cs:line 25
+2023-12-02 01:14:16.362 +03:00 [ERR] Error in /api/storages POST Error mapping types.
+
+Mapping types:
+StorageForm -> Storage
+BackEndStructuer.DATA.DTOs.Storage.StorageForm -> BackEndStructuer.Entities.Storage
+
+Type Map configuration:
+StorageForm -> Storage
+BackEndStructuer.DATA.DTOs.Storage.StorageForm -> BackEndStructuer.Entities.Storage
+
+Destination Member:
+Files
+    at lambda_method132(Closure, Object, Storage, ResolutionContext)
+   at BackEndStructuer.Services.StorageService.add(StorageForm storageForm) in C:\Users\Osamah\Desktop\telegram_bot-main\ff\task-structutre\BackEndStructuer\Services\StorageService.cs:line 52
+   at BackEndStructuer.Controllers.StoragesController.Create(StorageForm storageForm) in C:\Users\Osamah\Desktop\telegram_bot-main\ff\task-structutre\BackEndStructuer\Controllers\StoragesController.cs:line 23
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at BackEndStructuer.Helpers.CustomPayloadTooLargeMiddleware.Invoke(HttpContext context) in C:\Users\Osamah\Desktop\telegram_bot-main\ff\task-structutre\BackEndStructuer\Helpers\CustomPayloadTooLargeFilter.cs:line 26
+   at BackEndStructuer.Helpers.CustomUnauthorizedMiddleware.InvokeAsync(HttpContext context) in C:\Users\Osamah\Desktop\telegram_bot-main\ff\task-structutre\BackEndStructuer\Helpers\CustomUnauthorizedFilter.cs:line 25
+AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+StorageForm -> Storage
+BackEndStructuer.DATA.DTOs.Storage.StorageForm -> BackEndStructuer.Entities.Storage
+
+Type Map configuration:
+StorageForm -> Storage
+BackEndStructuer.DATA.DTOs.Storage.StorageForm -> BackEndStructuer.Entities.Storage
+
+Destination Member:
+Files
+
+ ---> AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+FormFile -> StorageFile
+Microsoft.AspNetCore.Http.FormFile -> BackEndStructuer.Entities.StorageFile
+   at lambda_method133(Closure, IFormFile, StorageFile, ResolutionContext)
+   at lambda_method132(Closure, Object, Storage, ResolutionContext)
+   --- End of inner exception stack trace ---
+   at lambda_method132(Closure, Object, Storage, ResolutionContext)
+   at BackEndStructuer.Services.StorageService.add(StorageForm storageForm) in C:\Users\Osamah\Desktop\telegram_bot-main\ff\task-structutre\BackEndStructuer\Services\StorageService.cs:line 52
+   at BackEndStructuer.Controllers.StoragesController.Create(StorageForm storageForm) in C:\Users\Osamah\Desktop\telegram_bot-main\ff\task-structutre\BackEndStructuer\Controllers\StoragesController.cs:line 23
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at BackEndStructuer.Helpers.CustomPayloadTooLargeMiddleware.Invoke(HttpContext context) in C:\Users\Osamah\Desktop\telegram_bot-main\ff\task-structutre\BackEndStructuer\Helpers\CustomPayloadTooLargeFilter.cs:line 26
+   at BackEndStructuer.Helpers.CustomUnauthorizedMiddleware.InvokeAsync(HttpContext context) in C:\Users\Osamah\Desktop\telegram_bot-main\ff\task-structutre\BackEndStructuer\Helpers\CustomUnauthorizedFilter.cs:line 25
+2023-12-02 01:19:12.232 +03:00 [ERR] Error in /api/storages POST Error mapping types.
+
+Mapping types:
+StorageForm -> Storage
+BackEndStructuer.DATA.DTOs.Storage.StorageForm -> BackEndStructuer.Entities.Storage
+
+Type Map configuration:
+StorageForm -> Storage
+BackEndStructuer.DATA.DTOs.Storage.StorageForm -> BackEndStructuer.Entities.Storage
+
+Destination Member:
+Files
+    at lambda_method139(Closure, Object, Storage, ResolutionContext)
+   at BackEndStructuer.Services.StorageService.add(StorageForm storageForm) in C:\Users\Osamah\Desktop\telegram_bot-main\ff\task-structutre\BackEndStructuer\Services\StorageService.cs:line 52
+   at BackEndStructuer.Controllers.StoragesController.Create(StorageForm storageForm) in C:\Users\Osamah\Desktop\telegram_bot-main\ff\task-structutre\BackEndStructuer\Controllers\StoragesController.cs:line 23
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at BackEndStructuer.Helpers.CustomPayloadTooLargeMiddleware.Invoke(HttpContext context) in C:\Users\Osamah\Desktop\telegram_bot-main\ff\task-structutre\BackEndStructuer\Helpers\CustomPayloadTooLargeFilter.cs:line 26
+   at BackEndStructuer.Helpers.CustomUnauthorizedMiddleware.InvokeAsync(HttpContext context) in C:\Users\Osamah\Desktop\telegram_bot-main\ff\task-structutre\BackEndStructuer\Helpers\CustomUnauthorizedFilter.cs:line 25
+AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+StorageForm -> Storage
+BackEndStructuer.DATA.DTOs.Storage.StorageForm -> BackEndStructuer.Entities.Storage
+
+Type Map configuration:
+StorageForm -> Storage
+BackEndStructuer.DATA.DTOs.Storage.StorageForm -> BackEndStructuer.Entities.Storage
+
+Destination Member:
+Files
+
+ ---> AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+FormFile -> StorageFile
+Microsoft.AspNetCore.Http.FormFile -> BackEndStructuer.Entities.StorageFile
+   at lambda_method140(Closure, IFormFile, StorageFile, ResolutionContext)
+   at lambda_method139(Closure, Object, Storage, ResolutionContext)
+   --- End of inner exception stack trace ---
+   at lambda_method139(Closure, Object, Storage, ResolutionContext)
+   at BackEndStructuer.Services.StorageService.add(StorageForm storageForm) in C:\Users\Osamah\Desktop\telegram_bot-main\ff\task-structutre\BackEndStructuer\Services\StorageService.cs:line 52
+   at BackEndStructuer.Controllers.StoragesController.Create(StorageForm storageForm) in C:\Users\Osamah\Desktop\telegram_bot-main\ff\task-structutre\BackEndStructuer\Controllers\StoragesController.cs:line 23
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at BackEndStructuer.Helpers.CustomPayloadTooLargeMiddleware.Invoke(HttpContext context) in C:\Users\Osamah\Desktop\telegram_bot-main\ff\task-structutre\BackEndStructuer\Helpers\CustomPayloadTooLargeFilter.cs:line 26
+   at BackEndStructuer.Helpers.CustomUnauthorizedMiddleware.InvokeAsync(HttpContext context) in C:\Users\Osamah\Desktop\telegram_bot-main\ff\task-structutre\BackEndStructuer\Helpers\CustomUnauthorizedFilter.cs:line 25
+2023-12-02 01:20:44.809 +03:00 [ERR] Error in /api/storages POST Error mapping types.
+
+Mapping types:
+StorageForm -> Storage
+BackEndStructuer.DATA.DTOs.Storage.StorageForm -> BackEndStructuer.Entities.Storage
+
+Type Map configuration:
+StorageForm -> Storage
+BackEndStructuer.DATA.DTOs.Storage.StorageForm -> BackEndStructuer.Entities.Storage
+
+Destination Member:
+Files
+    at lambda_method139(Closure, Object, Storage, ResolutionContext)
+   at BackEndStructuer.Services.StorageService.add(StorageForm storageForm) in C:\Users\Osamah\Desktop\telegram_bot-main\ff\task-structutre\BackEndStructuer\Services\StorageService.cs:line 52
+   at BackEndStructuer.Controllers.StoragesController.Create(StorageForm storageForm) in C:\Users\Osamah\Desktop\telegram_bot-main\ff\task-structutre\BackEndStructuer\Controllers\StoragesController.cs:line 23
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at BackEndStructuer.Helpers.CustomPayloadTooLargeMiddleware.Invoke(HttpContext context) in C:\Users\Osamah\Desktop\telegram_bot-main\ff\task-structutre\BackEndStructuer\Helpers\CustomPayloadTooLargeFilter.cs:line 26
+   at BackEndStructuer.Helpers.CustomUnauthorizedMiddleware.InvokeAsync(HttpContext context) in C:\Users\Osamah\Desktop\telegram_bot-main\ff\task-structutre\BackEndStructuer\Helpers\CustomUnauthorizedFilter.cs:line 25
+AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+StorageForm -> Storage
+BackEndStructuer.DATA.DTOs.Storage.StorageForm -> BackEndStructuer.Entities.Storage
+
+Type Map configuration:
+StorageForm -> Storage
+BackEndStructuer.DATA.DTOs.Storage.StorageForm -> BackEndStructuer.Entities.Storage
+
+Destination Member:
+Files
+
+ ---> AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+FormFile -> StorageFile
+Microsoft.AspNetCore.Http.FormFile -> BackEndStructuer.Entities.StorageFile
+   at lambda_method140(Closure, IFormFile, StorageFile, ResolutionContext)
+   at lambda_method139(Closure, Object, Storage, ResolutionContext)
+   --- End of inner exception stack trace ---
+   at lambda_method139(Closure, Object, Storage, ResolutionContext)
+   at BackEndStructuer.Services.StorageService.add(StorageForm storageForm) in C:\Users\Osamah\Desktop\telegram_bot-main\ff\task-structutre\BackEndStructuer\Services\StorageService.cs:line 52
+   at BackEndStructuer.Controllers.StoragesController.Create(StorageForm storageForm) in C:\Users\Osamah\Desktop\telegram_bot-main\ff\task-structutre\BackEndStructuer\Controllers\StoragesController.cs:line 23
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at BackEndStructuer.Helpers.CustomPayloadTooLargeMiddleware.Invoke(HttpContext context) in C:\Users\Osamah\Desktop\telegram_bot-main\ff\task-structutre\BackEndStructuer\Helpers\CustomPayloadTooLargeFilter.cs:line 26
+   at BackEndStructuer.Helpers.CustomUnauthorizedMiddleware.InvokeAsync(HttpContext context) in C:\Users\Osamah\Desktop\telegram_bot-main\ff\task-structutre\BackEndStructuer\Helpers\CustomUnauthorizedFilter.cs:line 25
+2023-12-02 01:24:06.784 +03:00 [ERR] Error in /api/storages POST Error mapping types.
+
+Mapping types:
+StorageForm -> Storage
+BackEndStructuer.DATA.DTOs.Storage.StorageForm -> BackEndStructuer.Entities.Storage
+
+Type Map configuration:
+StorageForm -> Storage
+BackEndStructuer.DATA.DTOs.Storage.StorageForm -> BackEndStructuer.Entities.Storage
+
+Destination Member:
+Files
+    at lambda_method139(Closure, Object, Storage, ResolutionContext)
+   at BackEndStructuer.Services.StorageService.add(StorageForm storageForm) in C:\Users\Osamah\Desktop\telegram_bot-main\ff\task-structutre\BackEndStructuer\Services\StorageService.cs:line 52
+   at BackEndStructuer.Controllers.StoragesController.Create(StorageForm storageForm) in C:\Users\Osamah\Desktop\telegram_bot-main\ff\task-structutre\BackEndStructuer\Controllers\StoragesController.cs:line 23
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at BackEndStructuer.Helpers.CustomPayloadTooLargeMiddleware.Invoke(HttpContext context) in C:\Users\Osamah\Desktop\telegram_bot-main\ff\task-structutre\BackEndStructuer\Helpers\CustomPayloadTooLargeFilter.cs:line 26
+   at BackEndStructuer.Helpers.CustomUnauthorizedMiddleware.InvokeAsync(HttpContext context) in C:\Users\Osamah\Desktop\telegram_bot-main\ff\task-structutre\BackEndStructuer\Helpers\CustomUnauthorizedFilter.cs:line 25
+AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+StorageForm -> Storage
+BackEndStructuer.DATA.DTOs.Storage.StorageForm -> BackEndStructuer.Entities.Storage
+
+Type Map configuration:
+StorageForm -> Storage
+BackEndStructuer.DATA.DTOs.Storage.StorageForm -> BackEndStructuer.Entities.Storage
+
+Destination Member:
+Files
+
+ ---> AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+FormFile -> StorageFile
+Microsoft.AspNetCore.Http.FormFile -> BackEndStructuer.Entities.StorageFile
+   at lambda_method140(Closure, IFormFile, StorageFile, ResolutionContext)
+   at lambda_method139(Closure, Object, Storage, ResolutionContext)
+   --- End of inner exception stack trace ---
+   at lambda_method139(Closure, Object, Storage, ResolutionContext)
+   at BackEndStructuer.Services.StorageService.add(StorageForm storageForm) in C:\Users\Osamah\Desktop\telegram_bot-main\ff\task-structutre\BackEndStructuer\Services\StorageService.cs:line 52
+   at BackEndStructuer.Controllers.StoragesController.Create(StorageForm storageForm) in C:\Users\Osamah\Desktop\telegram_bot-main\ff\task-structutre\BackEndStructuer\Controllers\StoragesController.cs:line 23
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at BackEndStructuer.Helpers.CustomPayloadTooLargeMiddleware.Invoke(HttpContext context) in C:\Users\Osamah\Desktop\telegram_bot-main\ff\task-structutre\BackEndStructuer\Helpers\CustomPayloadTooLargeFilter.cs:line 26
+   at BackEndStructuer.Helpers.CustomUnauthorizedMiddleware.InvokeAsync(HttpContext context) in C:\Users\Osamah\Desktop\telegram_bot-main\ff\task-structutre\BackEndStructuer\Helpers\CustomUnauthorizedFilter.cs:line 25
+2023-12-02 01:25:21.071 +03:00 [ERR] Error in /api/storages POST Error mapping types.
+
+Mapping types:
+StorageForm -> Storage
+BackEndStructuer.DATA.DTOs.Storage.StorageForm -> BackEndStructuer.Entities.Storage
+
+Type Map configuration:
+StorageForm -> Storage
+BackEndStructuer.DATA.DTOs.Storage.StorageForm -> BackEndStructuer.Entities.Storage
+
+Destination Member:
+Files
+    at lambda_method139(Closure, Object, Storage, ResolutionContext)
+   at BackEndStructuer.Services.StorageService.add(StorageForm storageForm) in C:\Users\Osamah\Desktop\telegram_bot-main\ff\task-structutre\BackEndStructuer\Services\StorageService.cs:line 52
+   at BackEndStructuer.Controllers.StoragesController.Create(StorageForm storageForm) in C:\Users\Osamah\Desktop\telegram_bot-main\ff\task-structutre\BackEndStructuer\Controllers\StoragesController.cs:line 23
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at BackEndStructuer.Helpers.CustomPayloadTooLargeMiddleware.Invoke(HttpContext context) in C:\Users\Osamah\Desktop\telegram_bot-main\ff\task-structutre\BackEndStructuer\Helpers\CustomPayloadTooLargeFilter.cs:line 26
+   at BackEndStructuer.Helpers.CustomUnauthorizedMiddleware.InvokeAsync(HttpContext context) in C:\Users\Osamah\Desktop\telegram_bot-main\ff\task-structutre\BackEndStructuer\Helpers\CustomUnauthorizedFilter.cs:line 25
+AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+StorageForm -> Storage
+BackEndStructuer.DATA.DTOs.Storage.StorageForm -> BackEndStructuer.Entities.Storage
+
+Type Map configuration:
+StorageForm -> Storage
+BackEndStructuer.DATA.DTOs.Storage.StorageForm -> BackEndStructuer.Entities.Storage
+
+Destination Member:
+Files
+
+ ---> AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+FormFile -> StorageFile
+Microsoft.AspNetCore.Http.FormFile -> BackEndStructuer.Entities.StorageFile
+   at lambda_method140(Closure, IFormFile, StorageFile, ResolutionContext)
+   at lambda_method139(Closure, Object, Storage, ResolutionContext)
+   --- End of inner exception stack trace ---
+   at lambda_method139(Closure, Object, Storage, ResolutionContext)
+   at BackEndStructuer.Services.StorageService.add(StorageForm storageForm) in C:\Users\Osamah\Desktop\telegram_bot-main\ff\task-structutre\BackEndStructuer\Services\StorageService.cs:line 52
+   at BackEndStructuer.Controllers.StoragesController.Create(StorageForm storageForm) in C:\Users\Osamah\Desktop\telegram_bot-main\ff\task-structutre\BackEndStructuer\Controllers\StoragesController.cs:line 23
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at BackEndStructuer.Helpers.CustomPayloadTooLargeMiddleware.Invoke(HttpContext context) in C:\Users\Osamah\Desktop\telegram_bot-main\ff\task-structutre\BackEndStructuer\Helpers\CustomPayloadTooLargeFilter.cs:line 26
+   at BackEndStructuer.Helpers.CustomUnauthorizedMiddleware.InvokeAsync(HttpContext context) in C:\Users\Osamah\Desktop\telegram_bot-main\ff\task-structutre\BackEndStructuer\Helpers\CustomUnauthorizedFilter.cs:line 25
+2023-12-02 01:27:04.988 +03:00 [ERR] Error in /api/storages POST Object reference not set to an instance of an object.    at BackEndStructuer.Services.StorageService.add(StorageForm storageForm) in C:\Users\Osamah\Desktop\telegram_bot-main\ff\task-structutre\BackEndStructuer\Services\StorageService.cs:line 59
+   at BackEndStructuer.Controllers.StoragesController.Create(StorageForm storageForm) in C:\Users\Osamah\Desktop\telegram_bot-main\ff\task-structutre\BackEndStructuer\Controllers\StoragesController.cs:line 23
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at BackEndStructuer.Helpers.CustomPayloadTooLargeMiddleware.Invoke(HttpContext context) in C:\Users\Osamah\Desktop\telegram_bot-main\ff\task-structutre\BackEndStructuer\Helpers\CustomPayloadTooLargeFilter.cs:line 26
+   at BackEndStructuer.Helpers.CustomUnauthorizedMiddleware.InvokeAsync(HttpContext context) in C:\Users\Osamah\Desktop\telegram_bot-main\ff\task-structutre\BackEndStructuer\Helpers\CustomUnauthorizedFilter.cs:line 25
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at BackEndStructuer.Services.StorageService.add(StorageForm storageForm) in C:\Users\Osamah\Desktop\telegram_bot-main\ff\task-structutre\BackEndStructuer\Services\StorageService.cs:line 59
+   at BackEndStructuer.Controllers.StoragesController.Create(StorageForm storageForm) in C:\Users\Osamah\Desktop\telegram_bot-main\ff\task-structutre\BackEndStructuer\Controllers\StoragesController.cs:line 23
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at BackEndStructuer.Helpers.CustomPayloadTooLargeMiddleware.Invoke(HttpContext context) in C:\Users\Osamah\Desktop\telegram_bot-main\ff\task-structutre\BackEndStructuer\Helpers\CustomPayloadTooLargeFilter.cs:line 26
+   at BackEndStructuer.Helpers.CustomUnauthorizedMiddleware.InvokeAsync(HttpContext context) in C:\Users\Osamah\Desktop\telegram_bot-main\ff\task-structutre\BackEndStructuer\Helpers\CustomUnauthorizedFilter.cs:line 25

@@ -1,7 +1,9 @@
 using AutoMapper;
 using BackEndStructuer.DATA.DTOs;
 using BackEndStructuer.DATA.DTOs.ArticleDto;
+using BackEndStructuer.DATA.DTOs.Category;
 using BackEndStructuer.DATA.DTOs.roles;
+using BackEndStructuer.DATA.DTOs.Storage;
 using BackEndStructuer.DATA.DTOs.User;
 using BackEndStructuer.Entities;
 using OneSignalApi.Model;
@@ -24,7 +26,25 @@ namespace BackEndStructuer.Helpers
             CreateMap<Article, ArticleDto>();
             CreateMap<AppUser, AppUser>();
             CreateMap<Permission, PermissionDto>();
+            
+            
+            CreateMap<Category, CategoryDto>();
+            CreateMap<CategoryForm, Category>();
+            CreateMap<CategoryFormUpdate, Category>();
 
+            
+            CreateMap<Feature, FeatureDto>();
+            CreateMap<FeatureForm, Feature>();
+            CreateMap<FeatureFormUpdate, Feature>();
+
+            
+            CreateMap<Government, GovernmentDto>();
+            CreateMap<GovernmentForm, Government>();
+            CreateMap<GovernmentFormUpdate, Government>();
+
+            CreateMap<Storage, StorageDto>();
+            CreateMap<StorageForm, Storage>().ForMember(dist => dist.Files , opt => opt.Ignore());
+            CreateMap<StorageFormUpdate, Storage>();
         }
     }
 }
