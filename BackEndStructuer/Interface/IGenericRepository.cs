@@ -36,5 +36,6 @@ namespace BackEndStructuer.Interface
         Task<T> Get(Expression<Func<T, bool>> predicate);
         Task<T> Get(Expression<Func<T, bool>> predicate, Func<IQueryable<T>, IIncludableQueryable<T, object>> include);
 
+        Task<T> SaveChangeAsync(T entity);
     }
 }

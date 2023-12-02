@@ -150,6 +150,11 @@ namespace BackEndStructuer.Repository
             await query.CountAsync());
         }
 
+        public async Task<T> SaveChangeAsync(T entity)
+        {
+            await _dbContext.SaveChangesAsync();
 
+            return entity;
+        }
     }
 }

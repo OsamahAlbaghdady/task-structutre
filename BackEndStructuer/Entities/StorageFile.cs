@@ -14,4 +14,5 @@ public class StorageFile : BaseEntity<int>
         get { return _file == null ? null : Utils.Util.Url+'/'+_file.Replace("\\" , "/") ; }
         set { _file = value; }
     }
+
 }

@@ -296,6 +296,21 @@ namespace BackEndStructuer.Data.Migrations
                     b.ToTable("StorageFile");
                 });
 
+            modelBuilder.Entity("BackEndStructuer.Entities.UserStorageBookMark", b =>
+                {
+                    b.Property<int?>("StorageId")
+                        .HasColumnType("integer");
+
+                    b.Property<Guid?>("AppUserId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("StorageId", "AppUserId");
+
+                    b.HasIndex("AppUserId");
+
+                    b.ToTable("UserStorageBookMark");
+                });
+
             modelBuilder.Entity("BackEndStructuer.Entities.AppUser", b =>
                 {
                     b.HasOne("BackEndStructuer.Entities.Role", "Role")
@@ -353,6 +368,30 @@ namespace BackEndStructuer.Data.Migrations
                         .HasForeignKey("StorageId");
                 });
 
+            modelBuilder.Entity("BackEndStructuer.Entities.UserStorageBookMark", b =>
+                {
+                    b.HasOne("BackEndStructuer.Entities.AppUser", "AppUser")
+                        .WithMany("UserStorageBookMarks")
+                        .HasForeignKey("AppUserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("BackEndStructuer.Entities.Storage", "Storage")
+                        .WithMany("UserStorageBookMarks")
+                        .HasForeignKey("StorageId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("AppUser");
+
+                    b.Navigation("Storage");
+                });
+
+            modelBuilder.Entity("BackEndStructuer.Entities.AppUser", b =>
+                {
+                    b.Navigation("UserStorageBookMarks");
+                });
+
             modelBuilder.Entity("BackEndStructuer.Entities.Category", b =>
                 {
                     b.Navigation("Storages");
@@ -378,6 +417,8 @@ namespace BackEndStructuer.Data.Migrations
                     b.Navigation("Features");
 
                     b.Navigation("Files");
+
+                    b.Navigation("UserStorageBookMarks");
                 });
 #pragma warning restore 612, 618
         }

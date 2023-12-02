@@ -27,7 +27,12 @@ public class StoragesController : BaseController
 
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(int id) => Ok(await _storageService.delete(id));
-    
-    
- 
+
+    [HttpPost("add-book-mark")]
+    public async Task<IActionResult> AddBookMark(int id) => Ok(await _storageService.AddBookMark(id));
+
+
+    [HttpPost("get-book-mark")]
+    public async Task<IActionResult> GetBookMark(Guid id) => Ok(await _storageService.GetBookMarkByUserId(id));
+
 }

@@ -1,68 +1,20 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\Osamah\\Desktop\\telegram_bot-main\\ff\\task-structutre\\BackEndStructuer\\wwwroot\\Attachments\\03d663be-092e-42d4-b229-d62365d0aad0.png",
-      "PackagePath": "staticwebassets\\Attachments\\03d663be-092e-42d4-b229-d62365d0aad0.png"
+      "Id": "C:\\Users\\MK\\demo\\task-structutre\\BackEndStructuer\\wwwroot\\Attachments\\43a622e2-746b-48a6-b674-33da879dba46.pdf",
+      "PackagePath": "staticwebassets\\Attachments\\43a622e2-746b-48a6-b674-33da879dba46.pdf"
     },
     {
-      "Id": "C:\\Users\\Osamah\\Desktop\\telegram_bot-main\\ff\\task-structutre\\BackEndStructuer\\wwwroot\\Attachments\\1d0f15ac-d156-4975-a0ca-0fe7d13800c4.png",
-      "PackagePath": "staticwebassets\\Attachments\\1d0f15ac-d156-4975-a0ca-0fe7d13800c4.png"
+      "Id": "C:\\Users\\MK\\demo\\task-structutre\\BackEndStructuer\\wwwroot\\Attachments\\6c37598b-09de-43bb-a564-843c63d6dae0.pdf",
+      "PackagePath": "staticwebassets\\Attachments\\6c37598b-09de-43bb-a564-843c63d6dae0.pdf"
     },
     {
-      "Id": "C:\\Users\\Osamah\\Desktop\\telegram_bot-main\\ff\\task-structutre\\BackEndStructuer\\wwwroot\\Attachments\\2a133d01-6508-41d3-ae4e-f742401047c9.png",
-      "PackagePath": "staticwebassets\\Attachments\\2a133d01-6508-41d3-ae4e-f742401047c9.png"
+      "Id": "C:\\Users\\MK\\demo\\task-structutre\\BackEndStructuer\\wwwroot\\Attachments\\908e4885-e588-4b28-b9f4-8a77bb27542e.pdf",
+      "PackagePath": "staticwebassets\\Attachments\\908e4885-e588-4b28-b9f4-8a77bb27542e.pdf"
     },
     {
-      "Id": "C:\\Users\\Osamah\\Desktop\\telegram_bot-main\\ff\\task-structutre\\BackEndStructuer\\wwwroot\\Attachments\\4113bf7b-e289-4e27-959d-ccf462e29318.png",
-      "PackagePath": "staticwebassets\\Attachments\\4113bf7b-e289-4e27-959d-ccf462e29318.png"
-    },
-    {
-      "Id": "C:\\Users\\Osamah\\Desktop\\telegram_bot-main\\ff\\task-structutre\\BackEndStructuer\\wwwroot\\Attachments\\44cb8c89-f8d7-4973-a1fa-6e3a4025408b.png",
-      "PackagePath": "staticwebassets\\Attachments\\44cb8c89-f8d7-4973-a1fa-6e3a4025408b.png"
-    },
-    {
-      "Id": "C:\\Users\\Osamah\\Desktop\\telegram_bot-main\\ff\\task-structutre\\BackEndStructuer\\wwwroot\\Attachments\\471c5612-5e2e-46f6-9d86-dd7d0c757a15.png",
-      "PackagePath": "staticwebassets\\Attachments\\471c5612-5e2e-46f6-9d86-dd7d0c757a15.png"
-    },
-    {
-      "Id": "C:\\Users\\Osamah\\Desktop\\telegram_bot-main\\ff\\task-structutre\\BackEndStructuer\\wwwroot\\Attachments\\580ac077-16bb-4bf8-982c-7ecb4bbd2aa9.png",
-      "PackagePath": "staticwebassets\\Attachments\\580ac077-16bb-4bf8-982c-7ecb4bbd2aa9.png"
-    },
-    {
-      "Id": "C:\\Users\\Osamah\\Desktop\\telegram_bot-main\\ff\\task-structutre\\BackEndStructuer\\wwwroot\\Attachments\\5da37adf-0f44-4f28-9f0e-4c5349a4bf26.png",
-      "PackagePath": "staticwebassets\\Attachments\\5da37adf-0f44-4f28-9f0e-4c5349a4bf26.png"
-    },
-    {
-      "Id": "C:\\Users\\Osamah\\Desktop\\telegram_bot-main\\ff\\task-structutre\\BackEndStructuer\\wwwroot\\Attachments\\72f0c87a-91be-4b8d-8ab5-6fc22018b08b.png",
-      "PackagePath": "staticwebassets\\Attachments\\72f0c87a-91be-4b8d-8ab5-6fc22018b08b.png"
-    },
-    {
-      "Id": "C:\\Users\\Osamah\\Desktop\\telegram_bot-main\\ff\\task-structutre\\BackEndStructuer\\wwwroot\\Attachments\\86e99610-15fd-45ab-8048-ba5476c6dac4.png",
-      "PackagePath": "staticwebassets\\Attachments\\86e99610-15fd-45ab-8048-ba5476c6dac4.png"
-    },
-    {
-      "Id": "C:\\Users\\Osamah\\Desktop\\telegram_bot-main\\ff\\task-structutre\\BackEndStructuer\\wwwroot\\Attachments\\902f8718-524b-4a4c-8bbd-d8374219c0b0.png",
-      "PackagePath": "staticwebassets\\Attachments\\902f8718-524b-4a4c-8bbd-d8374219c0b0.png"
-    },
-    {
-      "Id": "C:\\Users\\Osamah\\Desktop\\telegram_bot-main\\ff\\task-structutre\\BackEndStructuer\\wwwroot\\Attachments\\ae24ee1c-f5be-4408-b2e1-fd69a3e96804.png",
-      "PackagePath": "staticwebassets\\Attachments\\ae24ee1c-f5be-4408-b2e1-fd69a3e96804.png"
-    },
-    {
-      "Id": "C:\\Users\\Osamah\\Desktop\\telegram_bot-main\\ff\\task-structutre\\BackEndStructuer\\wwwroot\\Attachments\\c83c40f3-5008-4116-b720-7e9fc56bc9ba.png",
-      "PackagePath": "staticwebassets\\Attachments\\c83c40f3-5008-4116-b720-7e9fc56bc9ba.png"
-    },
-    {
-      "Id": "C:\\Users\\Osamah\\Desktop\\telegram_bot-main\\ff\\task-structutre\\BackEndStructuer\\wwwroot\\Attachments\\cb85e7c2-958a-49db-ad58-2ec57953f871.png",
-      "PackagePath": "staticwebassets\\Attachments\\cb85e7c2-958a-49db-ad58-2ec57953f871.png"
-    },
-    {
-      "Id": "C:\\Users\\Osamah\\Desktop\\telegram_bot-main\\ff\\task-structutre\\BackEndStructuer\\wwwroot\\Attachments\\e0570ae8-a748-46c3-837a-45e68630579d.png",
-      "PackagePath": "staticwebassets\\Attachments\\e0570ae8-a748-46c3-837a-45e68630579d.png"
-    },
-    {
-      "Id": "C:\\Users\\Osamah\\Desktop\\telegram_bot-main\\ff\\task-structutre\\BackEndStructuer\\wwwroot\\Attachments\\fd6cf6f6-44cd-4912-a702-2ea21b9d7393.png",
-      "PackagePath": "staticwebassets\\Attachments\\fd6cf6f6-44cd-4912-a702-2ea21b9d7393.png"
+      "Id": "C:\\Users\\MK\\demo\\task-structutre\\BackEndStructuer\\wwwroot\\Attachments\\b443ab9d-4db6-42ac-9652-d7a005a9a807.pdf",
+      "PackagePath": "staticwebassets\\Attachments\\b443ab9d-4db6-42ac-9652-d7a005a9a807.pdf"
     },
     {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.BackEndStructuer.Microsoft.AspNetCore.StaticWebAssets.props",
