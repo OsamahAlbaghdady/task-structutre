@@ -492,3 +492,4 @@ C:\Users\Ali\Documents\GitHub\dxn-web\dxnapi\task-structutre\BackEndStructuer\ob
 C:\Users\Ali\Documents\GitHub\dxn-web\dxnapi\task-structutre\BackEndStructuer\obj\Debug\net7.0\BackEndStructuer.pdb
 C:\Users\Ali\Documents\GitHub\dxn-web\dxnapi\task-structutre\BackEndStructuer\obj\Debug\net7.0\BackEndStructuer.genruntimeconfig.cache
 C:\Users\Ali\Documents\GitHub\dxn-web\dxnapi\task-structutre\BackEndStructuer\obj\Debug\net7.0\ref\BackEndStructuer.dll
+C:\Users\MK\demo\task-structutre\BackEndStructuer\obj\Debug\net7.0\BackEndStructuer.sourcelink.json

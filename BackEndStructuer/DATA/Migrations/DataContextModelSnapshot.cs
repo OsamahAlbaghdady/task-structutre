@@ -209,21 +209,42 @@ namespace BackEndStructuer.Data.Migrations
 
             modelBuilder.Entity("BackEndStructuer.Entities.ReservedStorage", b =>
                 {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<int?>("Count")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime?>("CreationDate")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<bool>("Deleted")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("Destination")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime?>("EndDate")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<DateTime?>("StartDate")
+                        .HasColumnType("timestamp without time zone");
+
                     b.Property<int?>("StorageId")
                         .HasColumnType("integer");
 
-                    b.Property<Guid?>("AppUserId")
+                    b.Property<string>("Type")
+                        .HasColumnType("text");
+
+                    b.Property<Guid?>("UserId")
                         .HasColumnType("uuid");
 
-                    b.Property<DateTime?>("EndReserved")
-                        .HasColumnType("timestamp without time zone");
+                    b.HasKey("Id");
 
-                    b.Property<DateTime?>("StartReserved")
-                        .HasColumnType("timestamp without time zone");
+                    b.HasIndex("StorageId");
 
-                    b.HasKey("StorageId", "AppUserId");
-
-                    b.HasIndex("AppUserId");
+                    b.HasIndex("UserId");
 
                     b.ToTable("ReservedStorages");
                 });
@@ -379,21 +400,17 @@ namespace BackEndStructuer.Data.Migrations
 
             modelBuilder.Entity("BackEndStructuer.Entities.ReservedStorage", b =>
                 {
-                    b.HasOne("BackEndStructuer.Entities.AppUser", "AppUser")
-                        .WithMany()
-                        .HasForeignKey("AppUserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("BackEndStructuer.Entities.Storage", "Storage")
                         .WithMany()
-                        .HasForeignKey("StorageId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("StorageId");
 
-                    b.Navigation("AppUser");
+                    b.HasOne("BackEndStructuer.Entities.AppUser", "User")
+                        .WithMany("ReservedStorages")
+                        .HasForeignKey("UserId");
 
                     b.Navigation("Storage");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("BackEndStructuer.Entities.RolePermission", b =>
@@ -440,6 +457,8 @@ namespace BackEndStructuer.Data.Migrations
             modelBuilder.Entity("BackEndStructuer.Entities.AppUser", b =>
                 {
                     b.Navigation("BookMarks");
+
+                    b.Navigation("ReservedStorages");
                 });
 
             modelBuilder.Entity("BackEndStructuer.Entities.Category", b =>

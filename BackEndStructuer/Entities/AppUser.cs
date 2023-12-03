@@ -16,6 +16,8 @@ namespace BackEndStructuer.Entities
 
         public ICollection<Bookmark> BookMarks { get; set; } = new List<Bookmark>();
 
+        public ICollection<ReservedStorage> ReservedStorages { get; set; }
+
     }
     
 }

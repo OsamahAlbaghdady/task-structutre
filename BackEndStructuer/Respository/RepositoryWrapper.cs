@@ -22,7 +22,16 @@ namespace BackEndStructuer.Repository
         private IStorageFileRepository _storageFile;
         private IBookMarkRepository _bookMark;
 
+        public IReservedStorage _ReservedStorage;
+
         
+        public IReservedStorage ReservedStorage {  get {
+            if(_ReservedStorage == null)
+            {
+                _ReservedStorage = new ReservedStorageRepository(_context,_mapper);
+            }
+            return _ReservedStorage;
+        } }
         public IBookMarkRepository BookMark {  get {
             if(_bookMark == null)
             {
@@ -30,7 +39,8 @@ namespace BackEndStructuer.Repository
             }
             return _bookMark;
         } }
-      
+
+
         public IStorageFileRepository StorageFile {  get {
             if(_storageFile == null)
             {

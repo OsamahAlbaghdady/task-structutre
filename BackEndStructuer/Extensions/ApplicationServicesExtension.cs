@@ -5,8 +5,10 @@ using System;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using BackEndStructuer.DATA;
+using BackEndStructuer.Entities;
 using BackEndStructuer.Helpers;
 using BackEndStructuer.Helpers.OneSignal;
+using BackEndStructuer.Interface;
 using BackEndStructuer.Repository;
 using BackEndStructuer.Services;
 using NewEppBackEnd.Services;
@@ -31,6 +33,7 @@ namespace BackEndStructuer.Extensions
             services.AddScoped<IGovernmentService, GovernmentService>();
             services.AddScoped<IStorageService, StorageService>();
             services.AddScoped<IBookMarkService, BookMarkService>();
+            services.AddScoped<IReservedStorageService, ReservedStorageService>();
 
             return services;
         }

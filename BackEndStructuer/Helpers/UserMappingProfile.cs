@@ -2,6 +2,7 @@ using AutoMapper;
 using BackEndStructuer.DATA.DTOs;
 using BackEndStructuer.DATA.DTOs.ArticleDto;
 using BackEndStructuer.DATA.DTOs.Category;
+using BackEndStructuer.DATA.DTOs.ReservedStorage;
 using BackEndStructuer.DATA.DTOs.roles;
 using BackEndStructuer.DATA.DTOs.Storage;
 using BackEndStructuer.DATA.DTOs.User;
@@ -47,6 +48,9 @@ namespace BackEndStructuer.Helpers
 
 
             CreateMap<Bookmark, StorageDto>();
+
+            CreateMap<ReservedStorage , ReservedStorageDto>();
+            CreateMap<ReservedStorageUpdate , ReservedStorage>();
 
         }
     }

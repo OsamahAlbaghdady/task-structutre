@@ -1,16 +1,23 @@
 ﻿namespace BackEndStructuer.Entities;
 
-public class ReservedStorage 
+public class ReservedStorage : BaseEntity<Guid>
 {
-    public Guid? AppUserId { get; set; }
+    public Guid? UserId { get; set; }
+
+    public String? Destination { get; set; }
     
-    public AppUser? AppUser { get; set; }
+    public String? Type { get; set; }
+
+    public int? Count { get; set; }
+    
+    public AppUser? User { get; set; }
 
     public int? StorageId { get; set; }
     
     public Storage? Storage { get; set; }
 
-    public DateTime? StartReserved { get; set; }
+    public DateTime? StartDate { get; set; }
+
+    public DateTime? EndDate { get; set; }
     
-    public DateTime? EndReserved { get; set; }
 }
