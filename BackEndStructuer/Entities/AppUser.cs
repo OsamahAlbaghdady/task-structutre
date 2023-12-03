@@ -18,6 +18,10 @@ namespace BackEndStructuer.Entities
 
         public ICollection<ReservedStorage> ReservedStorages { get; set; }
 
+        public double Lat { get; set; }
+
+        public double Lng { get; set; }
+
     }
     
 }

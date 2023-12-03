@@ -4,6 +4,7 @@ using BackEndStructuer.DATA;
 using BackEndStructuer.DATA.DTOs.Storage;
 using BackEndStructuer.Entities;
 using BackEndStructuer.Repository;
+using BackEndStructuer.Utils;
 using Microsoft.EntityFrameworkCore;
 using NewEppBackEnd.Services;
 
@@ -12,10 +13,11 @@ namespace BackEndStructuer.Services;
 
 public interface IStorageService
 {
-   Task<(Storage?, string? error)> add(StorageForm storageForm );
-   Task<(List<StorageDto> storages, int? totalCount, string? error)> GetAll(int _pageNumber = 0);
+   Task<(Storage?, string? error)> add(Guid Id , StorageForm storageForm );
+   Task<(List<StorageDto> storages, int? totalCount, string? error)> GetAll(Guid Id, int _pageNumber = 0);
    Task<(Storage? storage, string? error)> update(StorageFormUpdate storageUpdate , int id);
    Task<(Storage? storage, string? error)> delete(int id);
+   Task<(List<StorageDto>? stotages,  int? totalCount , string? error)> GetNearbyStorages(Guid Id , int _pageNumber = 0);
 }
 
 public class StorageService : IStorageService
@@ -23,7 +25,6 @@ public class StorageService : IStorageService
    private readonly IMapper _mapper;
    private readonly IRepositoryWrapper _repositoryWrapper;
    private readonly IFileService _fileService;
-    private readonly DataContext _dataContext;
 
     public StorageService(
       IMapper mapper ,
@@ -35,11 +36,10 @@ public class StorageService : IStorageService
       _mapper = mapper;
       _repositoryWrapper = repositoryWrapper;
       _fileService = fileService;
-      _dataContext = dataContext;
    }
    
    
-   public async Task<(Storage?, string? error)> add(StorageForm storageForm )
+   public async Task<(Storage?, string? error)> add(Guid Id , StorageForm storageForm )
    {
       var government = await _repositoryWrapper.Government.GetById(storageForm.GovernmentId);
       if (government == null) return (null, "Government not found");
@@ -50,14 +50,16 @@ public class StorageService : IStorageService
       var features = await _repositoryWrapper.Feature.GetFeaturesByIds(storageForm.FeatureIds);
       if (features.Count < storageForm.FeatureIds.Count) return (null , "One of some features not found");
 
-
       var files = await _fileService.Upload(storageForm.Files);
       if (files.files.Count == null) return (null , "can't upload files");
+      
 
       var storage = _mapper.Map<Storage>(storageForm);
       storage.Category = category;
       storage.Government = government;
       storage.Features = features;
+      storage.UserId = Id;
+      
       foreach (var file in files.files)
       {
          var storageFile = new StorageFile(file.Path);
@@ -67,10 +69,11 @@ public class StorageService : IStorageService
       return result == null ? (null , "storage couldn't add") : (storage , null);
    }
 
-   public async Task<(List<StorageDto> storages, int? totalCount, string? error)> GetAll(int _pageNumber = 0)
+   public async Task<(List<StorageDto> storages, int? totalCount, string? error)> GetAll(Guid Id , int _pageNumber = 0)
    {
-      var (storages, totalCount) = await _repositoryWrapper.Storage.GetAll<StorageDto>(_pageNumber);
-      return (storages, totalCount, null);
+      var storages = await _repositoryWrapper.Storage.GetAll(s => s.UserId == Id , _pageNumber);
+      var map = _mapper.Map<List<StorageDto>>(storages.data);
+      return (map, storages.totalCount, null);
    }
 
    public async Task<(Storage? storage, string? error)> update(StorageFormUpdate storageUpdate, int id)
@@ -90,4 +93,12 @@ public class StorageService : IStorageService
       return result == null ? (null, "storage could not be deleted") : (result, null);
    }
 
+   public async Task<(List<StorageDto>? stotages,  int? totalCount ,string? error)> GetNearbyStorages(Guid Id, int _pageNumber = 0)
+   {
+      var user = await _repositoryWrapper.User.GetById(Id);
+      var storages = await _repositoryWrapper.Storage.GetAll(
+         s => LocationCalculator.CalculateDistance(s.Lat , s.Lng , user.Lat , user.Lng ) < 10  , _pageNumber);
+      var map = _mapper.Map<List<StorageDto>>(storages.data);
+      return (map , storages.totalCount , null);
+   }
 }

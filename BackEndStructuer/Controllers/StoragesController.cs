@@ -18,10 +18,13 @@ public class StoragesController : BaseController
 
 
     [HttpGet]
-    public async Task<IActionResult> GetAll([FromQuery] BaseFilter filter) => Ok(await _storageService.GetAll(filter.PageNumber) , filter.PageNumber);
+    public async Task<IActionResult> GetAll([FromQuery] BaseFilter filter) => Ok(await _storageService.GetAll(Id , filter.PageNumber) , filter.PageNumber);
+    
+    [HttpGet("GetNearby")]
+    public async Task<IActionResult> GetNearby([FromQuery] BaseFilter filter) => Ok(await _storageService.GetNearbyStorages(Id , filter.PageNumber) , filter.PageNumber);
 
     [HttpPost]
-    public async Task<IActionResult> Create([FromForm] StorageForm storageForm) => Ok(await _storageService.add(storageForm));
+    public async Task<IActionResult> Create([FromForm] StorageForm storageForm) => Ok(await _storageService.add(Id , storageForm));
 
     [HttpPut("{id}")]
     public async Task<IActionResult> Update([FromForm] StorageFormUpdate storageFormUpdate, int id) => Ok(await _storageService.update(storageFormUpdate,id));

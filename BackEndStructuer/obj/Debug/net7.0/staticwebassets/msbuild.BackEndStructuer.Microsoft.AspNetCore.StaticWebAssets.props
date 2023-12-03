@@ -1,11 +1,11 @@
 ﻿<Project>
   <ItemGroup>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Attachments\14fd6efb-1373-4021-acd1-66aa9053824d.pdf))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Attachments\0f848d79-b873-4bfd-9831-5bd1fb3e4546.pdf))">
       <SourceType>Package</SourceType>
       <SourceId>BackEndStructuer</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/BackEndStructuer</BasePath>
-      <RelativePath>Attachments/14fd6efb-1373-4021-acd1-66aa9053824d.pdf</RelativePath>
+      <RelativePath>Attachments/0f848d79-b873-4bfd-9831-5bd1fb3e4546.pdf</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -14,7 +14,7 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Attachments\14fd6efb-1373-4021-acd1-66aa9053824d.pdf))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Attachments\0f848d79-b873-4bfd-9831-5bd1fb3e4546.pdf))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Attachments\2809eebd-a48c-4d2b-b7ab-f94b2fe118b7.jpg))">
       <SourceType>Package</SourceType>
@@ -111,38 +111,6 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Attachments\b443ab9d-4db6-42ac-9652-d7a005a9a807.pdf))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Attachments\bc0fb33c-a1ac-4adc-9f36-83dda6c7941a.pdf))">
-      <SourceType>Package</SourceType>
-      <SourceId>BackEndStructuer</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/BackEndStructuer</BasePath>
-      <RelativePath>Attachments/bc0fb33c-a1ac-4adc-9f36-83dda6c7941a.pdf</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Attachments\bc0fb33c-a1ac-4adc-9f36-83dda6c7941a.pdf))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Attachments\c2135f48-1557-46a2-aa29-ee7f7ee1151b.pdf))">
-      <SourceType>Package</SourceType>
-      <SourceId>BackEndStructuer</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/BackEndStructuer</BasePath>
-      <RelativePath>Attachments/c2135f48-1557-46a2-aa29-ee7f7ee1151b.pdf</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Attachments\c2135f48-1557-46a2-aa29-ee7f7ee1151b.pdf))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Attachments\ec142d5a-f66b-4dcb-b470-6a19328f5921.jpg))">
       <SourceType>Package</SourceType>

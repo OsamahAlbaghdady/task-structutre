@@ -8,9 +8,9 @@ public class Storage : BaseEntity<int>
 
     public int? Price { get; set; }
 
-    public double? Lat { get; set; }
+    public double Lat { get; set; }
     
-    public double? Lng { get; set; }
+    public double Lng { get; set; }
 
     public int? NumberOfRom { get; set; }
     
@@ -27,6 +27,10 @@ public class Storage : BaseEntity<int>
     public Category? Category { get; set; }
 
     public ICollection<Feature>? Features { get; set; }
+
+    public Guid? UserId { get; set; }
+    
+    public AppUser? User { get; set; }
 
     public ICollection<StorageFile>? Files { get; set; } = new List<StorageFile>();
 
