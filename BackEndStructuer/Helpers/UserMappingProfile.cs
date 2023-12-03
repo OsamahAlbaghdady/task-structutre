@@ -24,7 +24,6 @@ namespace BackEndStructuer.Helpers
 
             CreateMap<Role, RoleDto>();
             CreateMap<Article, ArticleDto>();
-            CreateMap<AppUser, AppUser>();
             CreateMap<Permission, PermissionDto>();
             
             
@@ -45,6 +44,10 @@ namespace BackEndStructuer.Helpers
             CreateMap<Storage, StorageDto>();
             CreateMap<StorageForm, Storage>().ForMember(dist => dist.Files , opt => opt.Ignore());
             CreateMap<StorageFormUpdate, Storage>();
+
+
+            CreateMap<Bookmark, StorageDto>();
+
         }
     }
 }

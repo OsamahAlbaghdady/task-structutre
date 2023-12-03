@@ -20,7 +20,17 @@ namespace BackEndStructuer.Repository
         private IGovernmentRepository _government;
         private IStorageRepository _storage;
         private IStorageFileRepository _storageFile;
+        private IBookMarkRepository _bookMark;
 
+        
+        public IBookMarkRepository BookMark {  get {
+            if(_bookMark == null)
+            {
+                _bookMark = new BookMarkRepository(_context,_mapper);
+            }
+            return _bookMark;
+        } }
+      
         public IStorageFileRepository StorageFile {  get {
             if(_storageFile == null)
             {
@@ -28,7 +38,9 @@ namespace BackEndStructuer.Repository
             }
             return _storageFile;
         } }
-        
+
+
+
         public IStorageRepository Storage {  get {
             if(_storage == null)
             {

@@ -22,13 +22,15 @@ namespace BackEndStructuer.DATA
         
         public DbSet<Article> Articles { get; set; }
 
-        public UserStorageBookMark UserStorageBookMark { get; set; }
+        public DbSet<Bookmark> Bookmark { get; set; }
+        
+        public DbSet<ReservedStorage> ReservedStorages { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
           
             modelBuilder.Entity<RolePermission>().HasKey(rp => new { rp.RoleId, rp.PermissionId });
 
-            modelBuilder.Entity<UserStorageBookMark>().HasKey(usbm => new { usbm.StorageId, usbm.AppUserId });
+            modelBuilder.Entity<ReservedStorage>().HasKey(rs => new { rs.StorageId, rs.AppUserId });
 
             // new DbInitializer(modelBuilder).Seed();
         

@@ -30,6 +30,7 @@ namespace BackEndStructuer.Extensions
             services.AddScoped<IFeatureService, FeatureService>();
             services.AddScoped<IGovernmentService, GovernmentService>();
             services.AddScoped<IStorageService, StorageService>();
+            services.AddScoped<IBookMarkService, BookMarkService>();
 
             return services;
         }

@@ -30,7 +30,7 @@ public class Storage : BaseEntity<int>
 
     public ICollection<StorageFile>? Files { get; set; } = new List<StorageFile>();
 
-    public ICollection<UserStorageBookMark>? UserStorageBookMarks { get; set; } = new List<UserStorageBookMark>();
+    public ICollection<Bookmark>? UserStorageBookMarks { get; set; } = new List<Bookmark>();
 
 
 }

@@ -78,6 +78,35 @@ namespace BackEndStructuer.Data.Migrations
                     b.ToTable("Articles");
                 });
 
+            modelBuilder.Entity("BackEndStructuer.Entities.Bookmark", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<Guid?>("AppUserId")
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime?>("CreationDate")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<bool>("Deleted")
+                        .HasColumnType("boolean");
+
+                    b.Property<int?>("StorageId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AppUserId");
+
+                    b.HasIndex("StorageId");
+
+                    b.ToTable("Bookmark");
+                });
+
             modelBuilder.Entity("BackEndStructuer.Entities.Category", b =>
                 {
                     b.Property<int>("Id")
@@ -176,6 +205,27 @@ namespace BackEndStructuer.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Permissions");
+                });
+
+            modelBuilder.Entity("BackEndStructuer.Entities.ReservedStorage", b =>
+                {
+                    b.Property<int?>("StorageId")
+                        .HasColumnType("integer");
+
+                    b.Property<Guid?>("AppUserId")
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime?>("EndReserved")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<DateTime?>("StartReserved")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.HasKey("StorageId", "AppUserId");
+
+                    b.HasIndex("AppUserId");
+
+                    b.ToTable("ReservedStorages");
                 });
 
             modelBuilder.Entity("BackEndStructuer.Entities.Role", b =>
@@ -296,21 +346,6 @@ namespace BackEndStructuer.Data.Migrations
                     b.ToTable("StorageFile");
                 });
 
-            modelBuilder.Entity("BackEndStructuer.Entities.UserStorageBookMark", b =>
-                {
-                    b.Property<int?>("StorageId")
-                        .HasColumnType("integer");
-
-                    b.Property<Guid?>("AppUserId")
-                        .HasColumnType("uuid");
-
-                    b.HasKey("StorageId", "AppUserId");
-
-                    b.HasIndex("AppUserId");
-
-                    b.ToTable("UserStorageBookMark");
-                });
-
             modelBuilder.Entity("BackEndStructuer.Entities.AppUser", b =>
                 {
                     b.HasOne("BackEndStructuer.Entities.Role", "Role")
@@ -320,11 +355,45 @@ namespace BackEndStructuer.Data.Migrations
                     b.Navigation("Role");
                 });
 
+            modelBuilder.Entity("BackEndStructuer.Entities.Bookmark", b =>
+                {
+                    b.HasOne("BackEndStructuer.Entities.AppUser", "AppUser")
+                        .WithMany("BookMarks")
+                        .HasForeignKey("AppUserId");
+
+                    b.HasOne("BackEndStructuer.Entities.Storage", "Storage")
+                        .WithMany("UserStorageBookMarks")
+                        .HasForeignKey("StorageId");
+
+                    b.Navigation("AppUser");
+
+                    b.Navigation("Storage");
+                });
+
             modelBuilder.Entity("BackEndStructuer.Entities.Feature", b =>
                 {
                     b.HasOne("BackEndStructuer.Entities.Storage", null)
                         .WithMany("Features")
                         .HasForeignKey("StorageId");
+                });
+
+            modelBuilder.Entity("BackEndStructuer.Entities.ReservedStorage", b =>
+                {
+                    b.HasOne("BackEndStructuer.Entities.AppUser", "AppUser")
+                        .WithMany()
+                        .HasForeignKey("AppUserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("BackEndStructuer.Entities.Storage", "Storage")
+                        .WithMany()
+                        .HasForeignKey("StorageId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("AppUser");
+
+                    b.Navigation("Storage");
                 });
 
             modelBuilder.Entity("BackEndStructuer.Entities.RolePermission", b =>
@@ -368,28 +437,9 @@ namespace BackEndStructuer.Data.Migrations
                         .HasForeignKey("StorageId");
                 });
 
-            modelBuilder.Entity("BackEndStructuer.Entities.UserStorageBookMark", b =>
-                {
-                    b.HasOne("BackEndStructuer.Entities.AppUser", "AppUser")
-                        .WithMany("UserStorageBookMarks")
-                        .HasForeignKey("AppUserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("BackEndStructuer.Entities.Storage", "Storage")
-                        .WithMany("UserStorageBookMarks")
-                        .HasForeignKey("StorageId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("AppUser");
-
-                    b.Navigation("Storage");
-                });
-
             modelBuilder.Entity("BackEndStructuer.Entities.AppUser", b =>
                 {
-                    b.Navigation("UserStorageBookMarks");
+                    b.Navigation("BookMarks");
                 });
 
             modelBuilder.Entity("BackEndStructuer.Entities.Category", b =>

@@ -2,7 +2,7 @@
 
 namespace BackEndStructuer.Entities
 {
-    public class UserStorageBookMark
+    public class Bookmark : BaseEntity<int>
     {
 
         public Guid? AppUserId { get; set; }
@@ -13,9 +13,6 @@ namespace BackEndStructuer.Entities
 
         public Storage? Storage { get; set; }
 
-        public static implicit operator UserStorageBookMark(EntityEntry<UserStorageBookMark> v)
-        {
-            throw new NotImplementedException();
-        }
+   
     }
 }

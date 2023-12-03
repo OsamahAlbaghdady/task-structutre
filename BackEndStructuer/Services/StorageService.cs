@@ -4,6 +4,7 @@ using BackEndStructuer.DATA;
 using BackEndStructuer.DATA.DTOs.Storage;
 using BackEndStructuer.Entities;
 using BackEndStructuer.Repository;
+using Microsoft.EntityFrameworkCore;
 using NewEppBackEnd.Services;
 
 namespace BackEndStructuer.Services;
@@ -15,8 +16,6 @@ public interface IStorageService
    Task<(List<StorageDto> storages, int? totalCount, string? error)> GetAll(int _pageNumber = 0);
    Task<(Storage? storage, string? error)> update(StorageFormUpdate storageUpdate , int id);
    Task<(Storage? storage, string? error)> delete(int id);
-   Task<(Storage? storage, string? error)> AddBookMark(int id);
-   Task<(List<StorageDto>? storages, string? error)> GetBookMarkByUserId(Guid id);
 }
 
 public class StorageService : IStorageService
@@ -36,7 +35,7 @@ public class StorageService : IStorageService
       _mapper = mapper;
       _repositoryWrapper = repositoryWrapper;
       _fileService = fileService;
-        _dataContext = dataContext;
+      _dataContext = dataContext;
    }
    
    
@@ -91,43 +90,4 @@ public class StorageService : IStorageService
       return result == null ? (null, "storage could not be deleted") : (result, null);
    }
 
-    public async Task<(Storage? storage, string? error)> AddBookMark(int id)
-    {
-        var user = await _repositoryWrapper.User.GetById(Guid.Parse("d2cb8891-81eb-429d-b6a5-f6be58668907"));
-        if (user == null) return (null, "User not found");
-
-        var storage = await _repositoryWrapper.Storage.GetById(id);
-        if (storage == null) return (null, "Storage not found");
-
-         var transaction = await _dataContext.Database.BeginTransactionAsync();
-
-        try
-        {
-            var bookMark = new UserStorageBookMark() { Storage = storage, AppUser = user };
-
-            user.UserStorageBookMarks.Add(bookMark);
-
-            await _dataContext.SaveChangesAsync();
-            await transaction.CommitAsync();
-
-        }
-        catch (Exception ex)
-        {
-            await transaction.RollbackAsync();
-            return (null, ex.Message);
-        }
-
-
-
-        return (storage , null);
-        
-    }
-
-    public async Task<(List<StorageDto>? storages, string? error)> GetBookMarkByUserId(Guid id)
-    {
-        var user = await _repositoryWrapper.User.GetById(id);
-        if (user == null) return (null, "User not found");
-        var response = _mapper.Map<List<StorageDto>>(user.UserStorageBookMarks.Select(s => s.Storage).ToList());
-        return (response, null);
-    }
 }

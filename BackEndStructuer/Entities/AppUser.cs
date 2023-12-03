@@ -14,7 +14,7 @@ namespace BackEndStructuer.Entities
         public int? RoleId { get; set; }
         public Role? Role { get; set; }
 
-        public ICollection<UserStorageBookMark> UserStorageBookMarks { get; set; } = new List<UserStorageBookMark>();
+        public ICollection<Bookmark> BookMarks { get; set; } = new List<Bookmark>();
 
     }
     

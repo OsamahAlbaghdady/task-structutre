@@ -2890,19 +2890,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\MK\\.nuget\\packages\\": {}
+    "C:\\Users\\Ali\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\MK\\demo\\task-structutre\\BackEndStructuer\\BackEndStructuer.csproj",
+      "projectUniqueName": "C:\\Users\\Ali\\Documents\\GitHub\\dxn-web\\dxnapi\\task-structutre\\BackEndStructuer\\BackEndStructuer.csproj",
       "projectName": "BackEndStructuer",
-      "projectPath": "C:\\Users\\MK\\demo\\task-structutre\\BackEndStructuer\\BackEndStructuer.csproj",
-      "packagesPath": "C:\\Users\\MK\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\MK\\demo\\task-structutre\\BackEndStructuer\\obj\\",
+      "projectPath": "C:\\Users\\Ali\\Documents\\GitHub\\dxn-web\\dxnapi\\task-structutre\\BackEndStructuer\\BackEndStructuer.csproj",
+      "packagesPath": "C:\\Users\\Ali\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Ali\\Documents\\GitHub\\dxn-web\\dxnapi\\task-structutre\\BackEndStructuer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\MK\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Ali\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2998,7 +2998,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   },

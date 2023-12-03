@@ -19,6 +19,8 @@ namespace BackEndStructuer.Repository
         IStorageRepository Storage { get; }
         
         IStorageFileRepository StorageFile { get; }
+        
+        IBookMarkRepository BookMark { get; }
 
     }
 }
