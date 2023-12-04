@@ -2,6 +2,7 @@ using AutoMapper;
 using BackEndStructuer.DATA.DTOs;
 using BackEndStructuer.DATA.DTOs.ArticleDto;
 using BackEndStructuer.DATA.DTOs.Category;
+using BackEndStructuer.DATA.DTOs.RatingStorage;
 using BackEndStructuer.DATA.DTOs.ReservedStorage;
 using BackEndStructuer.DATA.DTOs.roles;
 using BackEndStructuer.DATA.DTOs.Storage;
@@ -51,6 +52,12 @@ namespace BackEndStructuer.Helpers
 
             CreateMap<ReservedStorage , ReservedStorageDto>();
             CreateMap<ReservedStorageUpdate , ReservedStorage>();
+            
+            
+            CreateMap<RatingStorage, RatingStorageDto>();
+            CreateMap<RatingStorageForm, RatingStorage>();
+            CreateMap<RatingStorageForm, RatingStorage>();
+            
 
         }
     }

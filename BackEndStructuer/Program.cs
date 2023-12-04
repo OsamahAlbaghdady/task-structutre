@@ -2,6 +2,8 @@ using System.Globalization;
 using BackEndStructuer.Extensions;
 using BackEndStructuer.Extensions;
 using BackEndStructuer.Helpers;
+using BackEndStructuer.Repository;
+using BackEndStructuer.Schedule;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Serilog;
@@ -46,6 +48,7 @@ builder.Services.AddSwaggerGen(options =>
 });
 builder.Services.AddIdentityServices(builder.Configuration);
 builder.Services.AddApplicationServices(builder.Configuration);
+builder.Services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
 IConfiguration configuration = builder.Configuration;
 ConfigurationProvider.Configuration = configuration;
 AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
@@ -69,6 +72,13 @@ app.UseStaticFiles();
 
 app.MapControllers();
 
+using (var scope = app.Services.CreateScope())
+{
+    var serviceProvider = scope.ServiceProvider;
+    var repositoryWrapper = serviceProvider.GetRequiredService<IRepositoryWrapper>();
 
+    var notifyEndReserved = new NotifyEndReserved( TimeSpan.FromMilliseconds(1000) ,repositoryWrapper);
+    notifyEndReserved.Start();
+}
 
 app.Run();

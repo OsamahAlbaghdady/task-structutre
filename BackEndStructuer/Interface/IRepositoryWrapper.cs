@@ -24,5 +24,7 @@ namespace BackEndStructuer.Repository
         
         IReservedStorage ReservedStorage { get; }
 
+        IRatingStorageRepository RatingStorage { get; }
+
     }
 }

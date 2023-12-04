@@ -22,16 +22,30 @@ namespace BackEndStructuer.Repository
         private IStorageFileRepository _storageFile;
         private IBookMarkRepository _bookMark;
 
-        public IReservedStorage _ReservedStorage;
+        private IReservedStorage _reservedStorage;
+
+
+        private IRatingStorageRepository _ratingStorage; 
 
         
-        public IReservedStorage ReservedStorage {  get {
-            if(_ReservedStorage == null)
+        
+        public IRatingStorageRepository RatingStorage {  get {
+            if(_ratingStorage == null)
             {
-                _ReservedStorage = new ReservedStorageRepository(_context,_mapper);
+                _ratingStorage = new RatingStorageRepository(_context,_mapper);
             }
-            return _ReservedStorage;
+            return _ratingStorage;
         } }
+        
+        public IReservedStorage ReservedStorage {  get {
+            if(_reservedStorage == null)
+            {
+                _reservedStorage = new ReservedStorageRepository(_context,_mapper);
+            }
+            return _reservedStorage;
+        } }
+
+
         public IBookMarkRepository BookMark {  get {
             if(_bookMark == null)
             {
