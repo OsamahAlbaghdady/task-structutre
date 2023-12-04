@@ -9,10 +9,10 @@ namespace BackEndStructuer.Services;
 
 public interface IGovernmentService
 {
-   Task<(Government?, string? error)> add(GovernmentForm governmentForm );
-   Task<(List<GovernmentDto> governments, int? totalCount, string? error)> GetAll(int _pageNumber = 0);
-   Task<(Government? government, string? error)> update(GovernmentFormUpdate governmentUpdate , int id);
-   Task<(Government? government, string? error)> delete(int id);
+   Task<(GovernmentDto?, string? error)> add(GovernmentForm governmentForm );
+   Task<(List<GovernmentDto> governments, int? totalCount, string? error)> GetAll(GovernmentFilter filter);
+   Task<(GovernmentDto? government, string? error)> update(GovernmentFormUpdate governmentUpdate , int id);
+   Task<(GovernmentDto? government, string? error)> delete(int id);
 }
 
 public class GovernmentService : IGovernmentService
@@ -33,34 +33,39 @@ public class GovernmentService : IGovernmentService
    }
    
    
-   public async Task<(Government?, string? error)> add(GovernmentForm governmentForm )
+   public async Task<(GovernmentDto?, string? error)> add(GovernmentForm governmentForm )
    {
-     
       var government = _mapper.Map<Government>(governmentForm);
       var result = await _repositoryWrapper.Government.Add(government);
-      return result == null ? (null , "government couldn't add") : (government , null);
+      var map = _mapper.Map<GovernmentDto>(government);
+      return result == null ? (null , "government couldn't add") : (map , null);
    }
 
-   public async Task<(List<GovernmentDto> governments, int? totalCount, string? error)> GetAll(int _pageNumber = 0)
+   public async Task<(List<GovernmentDto> governments, int? totalCount, string? error)> GetAll(GovernmentFilter filter)
    {
-      var (governments, totalCount) = await _repositoryWrapper.Government.GetAll<GovernmentDto>(_pageNumber);
+      var (governments, totalCount) = await _repositoryWrapper.Government.GetAll<GovernmentDto>(
+         x=> (filter.Name == null || x.Name.Contains(filter.Name)),
+         filter.PageNumber
+         );
       return (governments, totalCount, null);
    }
 
-   public async Task<(Government? government, string? error)> update(GovernmentFormUpdate governmentUpdate, int id)
+   public async Task<(GovernmentDto? government, string? error)> update(GovernmentFormUpdate governmentUpdate, int id)
    {
       var government = await _repositoryWrapper.Government.GetById(id);
       if (government == null) return (null, "government not found "); 
       government = _mapper.Map(governmentUpdate , government);
       var response = await _repositoryWrapper.Government.Update(government);
-      return response == null ? (null , "government couldn't update") : (government , null);
+      var map = _mapper.Map<GovernmentDto>(government);
+      return response == null ? (null , "government couldn't update") : (map , null);
    }
 
-   public async Task<(Government? government, string? error)> delete(int id)
+   public async Task<(GovernmentDto? government, string? error)> delete(int id)
    {
       var government = await _repositoryWrapper.Government.GetById(id);
       if (government == null) return (null, "government not found ");
       var result = await _repositoryWrapper.Government.Delete(id);
-      return result == null ? (null, "government could not be deleted") : (result, null);
+      var map = _mapper.Map<GovernmentDto>(government);
+      return result == null ? (null, "government could not be deleted") : (map, null);
    }
 }

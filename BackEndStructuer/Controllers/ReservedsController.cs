@@ -17,7 +17,7 @@ public class ReservedsController : BaseController
     
     
     [HttpGet]
-    public async Task<IActionResult> GetAll([FromQuery] BaseFilter filter) => Ok(await _reservedStorageService.GetAll(Id , filter.PageNumber) , filter.PageNumber);
+    public async Task<IActionResult> GetAll([FromQuery] ReservedStorageFilter filter) => Ok(await _reservedStorageService.GetAll(Id , filter) , filter.PageNumber);
 
     [HttpPost("{storageId}")]
     public async Task<IActionResult> Create([FromForm] ReservedStorageForm reservedStorage , int storageId) => Ok(await _reservedStorageService.add(Id ,storageId ,reservedStorage));

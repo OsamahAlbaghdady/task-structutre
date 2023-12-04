@@ -15,20 +15,20 @@ public class StoragesController : BaseController
     {
         _storageService = storageService;
     }
-
-
-    [HttpGet]
-    public async Task<IActionResult> GetAll([FromQuery] BaseFilter filter) => Ok(await _storageService.GetAll(Id , filter.PageNumber) , filter.PageNumber);
     
-    [HttpGet("GetNearby")]
-    public async Task<IActionResult> GetNearby([FromQuery] BaseFilter filter) => Ok(await _storageService.GetNearbyStorages(Id , filter.PageNumber) , filter.PageNumber);
+    [Authorize]
+    [HttpGet]
+    public async Task<IActionResult> GetAll([FromQuery] StorageFilter filter) => Ok(await _storageService.GetAll(filter , Id , filter.PageNumber) , filter.PageNumber);
 
+    [Authorize]
     [HttpPost]
     public async Task<IActionResult> Create([FromForm] StorageForm storageForm) => Ok(await _storageService.add(Id , storageForm));
 
+    [Authorize]
     [HttpPut("{id}")]
     public async Task<IActionResult> Update([FromForm] StorageFormUpdate storageFormUpdate, int id) => Ok(await _storageService.update(storageFormUpdate,id));
 
+    [Authorize]
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(int id) => Ok(await _storageService.delete(id));
 

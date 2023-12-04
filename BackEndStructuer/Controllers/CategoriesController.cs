@@ -17,7 +17,7 @@ public class CategoriesController : BaseController
 
 
     [HttpGet]
-    public async Task<IActionResult> GetAll([FromQuery] BaseFilter filter) => Ok(await _categoryService.GetAll(filter.PageNumber) , filter.PageNumber);
+    public async Task<IActionResult> GetAll([FromQuery] CategoryFilter filter) => Ok(await _categoryService.GetAll(filter) , filter.PageNumber);
 
     [HttpPost]
     public async Task<IActionResult> Create([FromForm] CategoryForm categoryForm  , IFormFile Image) => Ok(await _categoryService.add(categoryForm , Image));

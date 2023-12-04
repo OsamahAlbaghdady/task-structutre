@@ -2890,19 +2890,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\MK\\.nuget\\packages\\": {}
+    "C:\\Users\\Ali\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\MK\\demo\\task-structutre\\BackEndStructuer\\BackEndStructuer.csproj",
+      "projectUniqueName": "C:\\Users\\Ali\\Documents\\GitHub\\dxn-web\\dxnapi\\task-structutre\\BackEndStructuer\\BackEndStructuer.csproj",
       "projectName": "BackEndStructuer",
-      "projectPath": "C:\\Users\\MK\\demo\\task-structutre\\BackEndStructuer\\BackEndStructuer.csproj",
-      "packagesPath": "C:\\Users\\MK\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\MK\\demo\\task-structutre\\BackEndStructuer\\obj\\",
+      "projectPath": "C:\\Users\\Ali\\Documents\\GitHub\\dxn-web\\dxnapi\\task-structutre\\BackEndStructuer\\BackEndStructuer.csproj",
+      "packagesPath": "C:\\Users\\Ali\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Ali\\Documents\\GitHub\\dxn-web\\dxnapi\\task-structutre\\BackEndStructuer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\MK\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Ali\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2990,24 +2990,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[7.0.14, 7.0.14]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[7.0.14, 7.0.14]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[7.0.14, 7.0.14]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[7.0.14, 7.0.14]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"

@@ -12,10 +12,9 @@ public interface IReservedStorageService
         ReservedStorageForm reservedStorageForm);
 
     Task<(List<ReservedStorageDto> reservedStorages, int? totalCount, string? error)> GetAll(Guid Id,
-        int _pageNumber = 0);
+        ReservedStorageFilter filter);
 
     Task<(ReservedStorageDto? reservedStorage, string?error)> update(ReservedStorageUpdate reservedStorage, Guid id);
-    Task<(ReservedStorageDto? reservedStorage, string?)> Delete(Guid Id, Guid id);
 }
 
 public class ReservedStorageService : IReservedStorageService
@@ -69,10 +68,18 @@ public class ReservedStorageService : IReservedStorageService
     }
 
     public async Task<(List<ReservedStorageDto> reservedStorages, int? totalCount, string? error)> GetAll(Guid Id,
-        int _pageNumber = 0)
+        ReservedStorageFilter filter)
     {
-        var reserveds = await _repositoryWrapper.ReservedStorage.GetAll(x => x.UserId == Id,
-            r => r.Include(u => u.User).Include(s => s.Storage));
+        var reserveds = await _repositoryWrapper.ReservedStorage.GetAll(x => 
+                (x.UserId == Id) && 
+                (filter.Destination == null || x.Destination.Contains(filter.Destination))&&
+                (filter.Type == null || x.Type.Contains(filter.Type))
+            ,
+            r => 
+                r.Include(u => u.User).
+                    Include(s => s.Storage) ,
+                filter.PageNumber
+            );
         var map = _mapper.Map<List<ReservedStorageDto>>(reserveds.data);
         return (map, reserveds.totalCount, null);
     }
@@ -88,8 +95,4 @@ public class ReservedStorageService : IReservedStorageService
         return response == null ? (null, "Couldn't update reserve") : (map, null);
     }
 
-    public Task<(ReservedStorageDto? reservedStorage, string?)> Delete(Guid Id, Guid id)
-    {
-        throw new NotImplementedException();
-    }
 }

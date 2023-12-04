@@ -22,4 +22,6 @@ public class StorageDto
     public GovernmentDto Government { get; set; }
 
     public CategoryDto Category { get; set; }
+
+    public DateTime CreationDate { get; set; }
 }

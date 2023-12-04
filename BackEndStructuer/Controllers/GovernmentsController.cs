@@ -17,7 +17,7 @@ public class GovernmentsController : BaseController
 
 
     [HttpGet]
-    public async Task<IActionResult> GetAll([FromQuery] BaseFilter filter) => Ok(await _governmentService.GetAll(filter.PageNumber) , filter.PageNumber);
+    public async Task<IActionResult> GetAll([FromQuery] GovernmentFilter filter) => Ok(await _governmentService.GetAll(filter) , filter.PageNumber);
 
     [HttpPost]
     public async Task<IActionResult> Create([FromForm] GovernmentForm governmentForm  ) => Ok(await _governmentService.add(governmentForm ));

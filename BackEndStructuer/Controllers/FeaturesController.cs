@@ -17,7 +17,7 @@ public class FeaturesController : BaseController
 
 
     [HttpGet]
-    public async Task<IActionResult> GetAll([FromQuery] BaseFilter filter) => Ok(await _featureService.GetAll(filter.PageNumber) , filter.PageNumber);
+    public async Task<IActionResult> GetAll([FromQuery] FeatureFilter filter) => Ok(await _featureService.GetAll(filter) , filter.PageNumber);
 
     [HttpPost]
     public async Task<IActionResult> Create([FromForm] FeatureForm featureForm  , IFormFile Image) => Ok(await _featureService.add(featureForm , Image));
