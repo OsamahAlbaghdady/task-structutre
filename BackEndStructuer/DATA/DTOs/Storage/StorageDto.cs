@@ -23,5 +23,7 @@ public class StorageDto
 
     public CategoryDto Category { get; set; }
 
+    public List<StorageFile>? Files { get; set; }
+
     public DateTime CreationDate { get; set; }
 }

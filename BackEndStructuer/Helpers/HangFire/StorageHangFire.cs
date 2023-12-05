@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
+using BackEndStructuer.Entities;
 using BackEndStructuer.Repository;
+using BackEndStructuer.Utils.Enums;
 using Hangfire;
 
 namespace BackEndStructuer.Helpers.HangFire;
@@ -15,19 +17,18 @@ public class StorageHangFire
         _mapper = mapper;
     }
 
-    public async static void ExpireScheduling(int id , DateTime expiredDate)
+    public static void ExpireScheduling(ReservedStorage reservedStorage  , DateTime expiredDate)
     {
-        DateTime specificDate = expiredDate; 
-        TimeZoneInfo timeZone = TimeZoneInfo.Utc; 
-        DateTime utcSpecificDate = TimeZoneInfo.ConvertTimeToUtc(specificDate, timeZone);
-        TimeSpan delay = utcSpecificDate - DateTime.UtcNow;
-        string jobId = BackgroundJob.Schedule(() => ExpireMethod(id), delay);
+        var delay = expiredDate - DateTime.UtcNow;
+        string jobId = BackgroundJob.Schedule(() => ExpireMethod(reservedStorage), delay);
         BackgroundJob.ContinueJobWith(jobId,() =>  BackgroundJob.Delete(jobId));
     }
     
-    private async static void ExpireMethod(int id)
-    {
-     
+    public async static Task<bool> ExpireMethod(ReservedStorage reservedStorage)
+    {   
+        reservedStorage.State = ReserveState.Completed;
+        await _repositoryWrapper.ReservedStorage.Update(reservedStorage);
+        return true;
     }
     
     

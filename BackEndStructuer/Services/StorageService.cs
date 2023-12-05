@@ -16,10 +16,10 @@ namespace BackEndStructuer.Services;
 
 public interface IStorageService
 {
-   Task<(StorageDto?, string? error)> add(Guid Id , StorageForm storageForm );
-   Task<(List<StorageDto> storages, int? totalCount, string? error)> GetAll(StorageFilter filter , Guid Id, int _pageNumber = 0);
-   Task<(StorageDto? storage, string? error)> update(StorageFormUpdate storageUpdate , int id);
-   Task<(StorageDto? storage, string? error)> delete(int id);
+   Task<(Storage?, string? error)> add(Guid Id , StorageForm storageForm );
+   Task<(List<StorageDto> storages, int? totalCount, string? error)> GetAll(string role, StorageFilter filter , Guid Id, int _pageNumber = 0);
+   Task<(Storage? storage, string? error)> update(StorageFormUpdate storageUpdate , int id);
+   Task<(Storage? storage, string? error)> delete(int id);
 }
 
 public class StorageService : IStorageService
@@ -41,7 +41,7 @@ public class StorageService : IStorageService
    }
    
    
-   public async Task<(StorageDto?, string? error)> add(Guid Id , StorageForm storageForm )
+   public async Task<(Storage?, string? error)> add(Guid Id , StorageForm storageForm )
    {
       var government = await _repositoryWrapper.Government.GetById(storageForm.GovernmentId);
       if (government == null) return (null, "Government not found");
@@ -52,33 +52,22 @@ public class StorageService : IStorageService
       var features = await _repositoryWrapper.Feature.GetFeaturesByIds(storageForm.FeatureIds);
       if (features.Count < storageForm.FeatureIds.Count) return (null , "One of some features not found");
 
-      var files = await _fileService.Upload(storageForm.Files);
-      if (files.files.Count == null) return (null , "can't upload files");
-      
-
       var storage = _mapper.Map<Storage>(storageForm);
-      storage.Category = category;
-      storage.Government = government;
       storage.Features = features;
       storage.UserId = Id;
-      
-  
-
-      foreach (var file in files.files)
+      foreach (var file in storageForm.Files)
       {
-         var storageFile = new StorageFile(file.Path);
-         storage.Files.Add(storageFile);  
+         storage.Files.Add(new StorageFile(file));
       }
+      
       var result = await _repositoryWrapper.Storage.Add(storage);
-      var map = _mapper.Map<StorageDto>(storage);
-      return result == null ? (null , "storage couldn't add") : (map , null);
+      return result == null ? (null , "storage couldn't add") : (storage , null);
    }
    
  
 
-   public async Task<(List<StorageDto> storages, int? totalCount, string? error)> GetAll(StorageFilter filter , Guid Id , int _pageNumber = 0)
+   public async Task<(List<StorageDto> storages, int? totalCount, string? error)> GetAll(string role , StorageFilter filter , Guid Id , int _pageNumber = 0)
    {
-      var user = await _repositoryWrapper.User.GetById(Id);
       var storages = await _repositoryWrapper.Storage.GetAll(x => (
          (filter.Name == null || x.Name.Contains(filter.Name)) && 
          (filter.Description == null || x.Description.Contains(filter.Description)) &&
@@ -89,30 +78,29 @@ public class StorageService : IStorageService
          (filter.NumberOrRoom == null || x.NumberOfRom == filter.NumberOrRoom) && 
          (filter.Features == null || x.Features.Any(f=> filter.Features.Contains(f.Id) )) &&
          (filter.Lat == null  || filter.Lng == null  || filter.Distance == null  || (Math.Abs((double)(x.Lat - filter.Lat)) < (filter.Distance / 111) && Math.Abs((double)(x.Lng - filter.Lng)) < (filter.Distance / (111 * Math.Cos(DegreesToRadians(filter.Lat.Value)))))) &&
-         (filter.IsOwner == null || x.UserId == user.Id) 
-         ) ,_pageNumber);
+         (filter.IsOwner == null || x.UserId == Id) && 
+         (filter.IsInReserved == null || x.ReservedStorages.Any((u => u.Id == Id)))
+      ) , i => i.Include(f => f.Files)  ,filter.PageNumber , filter.PageSize);
     
       var map = _mapper.Map<List<StorageDto>>(storages.data).OrderByDescending(s => s.CreationDate);
       
       return (map.ToList() , storages.totalCount  , null);
    }
-   public async Task<(StorageDto? storage, string? error)> update(StorageFormUpdate storageUpdate, int id)
+   public async Task<(Storage? storage, string? error)> update(StorageFormUpdate storageUpdate, int id)
    {
       var storage = await _repositoryWrapper.Storage.GetById(id);
       if (storage == null) return (null, "storage not found "); 
       storage = _mapper.Map(storageUpdate , storage);
       var response = await _repositoryWrapper.Storage.Update(storage);
-      var map = _mapper.Map<StorageDto>(storage);
-      return response == null ? (null , "storage couldn't update") : (map , null);
+      return response == null ? (null , "storage couldn't update") : (response , null);
    }
 
-   public async Task<(StorageDto? storage, string? error)> delete(int id)
+   public async Task<(Storage? storage, string? error)> delete(int id)
    {
       var storage = await _repositoryWrapper.Storage.GetById(id);
       if (storage == null) return (null, "storage not found ");
       var result = await _repositoryWrapper.Storage.Delete(id);
-      var map = _mapper.Map<StorageDto>(storage);
-      return result == null ? (null, "storage could not be deleted") : (map, null);
+      return result == null ? (null, "storage could not be deleted") : (result, null);
    }
    
    private double DegreesToRadians(double degrees)

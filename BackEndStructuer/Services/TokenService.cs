@@ -15,15 +15,15 @@ namespace BackEndStructuer.Services
         {
             _key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config["TokenKey"]));
         }
-        public string CreateToken(AppUser user)
+        public string CreateToken(AppUser user , Role role)
         {
             var claims = new List<Claim>
             {
                 new Claim(JwtRegisteredClaimNames.NameId, user.Id.ToString()),
                 // add role Claim
                 new Claim("id", user.Id.ToString()),
-                new Claim(ClaimTypes.Role, user.Role.Name.ToString()),
-                new Claim("Role", user.Role.Name.ToString()),
+                new Claim(ClaimTypes.Role, role.Name),
+                new Claim("Role", role.Name),
 
                 // new Claim(JwtRegisteredClaimNames., user.Email.ToString()),
             };

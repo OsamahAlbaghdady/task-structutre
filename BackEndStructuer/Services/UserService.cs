@@ -36,7 +36,7 @@ namespace BackEndStructuer.Services
             if (user == null) return (null, "User not found");
             if (!BCrypt.Net.BCrypt.Verify(loginForm.Password, user.Password)) return (null, "Wrong password");
             var userDto = _mapper.Map<UserDto>(user);
-            userDto.Token = _tokenService.CreateToken(user);
+            userDto.Token = _tokenService.CreateToken(user , user.Role);
             return (userDto, null);
         }
 
@@ -64,7 +64,7 @@ namespace BackEndStructuer.Services
 
             var finalUser = await _repositoryWrapper.User.CreateUser(newUser);
             var userDto = _mapper.Map<UserDto>(finalUser);
-            userDto.Token = _tokenService.CreateToken(newUser);
+            userDto.Token = _tokenService.CreateToken(newUser , role);
             return (userDto, null);
         }
 

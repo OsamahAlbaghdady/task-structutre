@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "8TiW6ZdkS6UdHNMUhCB03afXJSTxkFyVdyPgHjOlt6E=",
+  "Hash": "I40E1+R/n7WzCeUw0GEc8y0A9/zytY20KtUyVu+3jxs=",
   "Source": "BackEndStructuer",
   "BasePath": "_content/BackEndStructuer",
   "Mode": "Default",
@@ -10,36 +10,17 @@
     {
       "Name": "BackEndStructuer\\wwwroot",
       "Source": "BackEndStructuer",
-      "ContentRoot": "C:\\Users\\MK\\demo\\task-structutre\\BackEndStructuer\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ali\\Documents\\GitHub\\dxn-web\\dxnapi\\task-structutre\\BackEndStructuer\\wwwroot\\",
       "BasePath": "_content/BackEndStructuer",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\MK\\demo\\task-structutre\\BackEndStructuer\\wwwroot\\Attachments\\17ca0bc1-eb44-4cf9-baa4-e7a5a4a90b56.pdf",
+      "Identity": "C:\\Users\\Ali\\Documents\\GitHub\\dxn-web\\dxnapi\\task-structutre\\BackEndStructuer\\wwwroot\\Attachments\\2809eebd-a48c-4d2b-b7ab-f94b2fe118b7.jpg",
       "SourceId": "BackEndStructuer",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\MK\\demo\\task-structutre\\BackEndStructuer\\wwwroot\\",
-      "BasePath": "_content/BackEndStructuer",
-      "RelativePath": "Attachments/17ca0bc1-eb44-4cf9-baa4-e7a5a4a90b56.pdf",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Attachments\\17ca0bc1-eb44-4cf9-baa4-e7a5a4a90b56.pdf"
-    },
-    {
-      "Identity": "C:\\Users\\MK\\demo\\task-structutre\\BackEndStructuer\\wwwroot\\Attachments\\2809eebd-a48c-4d2b-b7ab-f94b2fe118b7.jpg",
-      "SourceId": "BackEndStructuer",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\MK\\demo\\task-structutre\\BackEndStructuer\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ali\\Documents\\GitHub\\dxn-web\\dxnapi\\task-structutre\\BackEndStructuer\\wwwroot\\",
       "BasePath": "_content/BackEndStructuer",
       "RelativePath": "Attachments/2809eebd-a48c-4d2b-b7ab-f94b2fe118b7.jpg",
       "AssetKind": "All",
@@ -55,10 +36,10 @@
       "OriginalItemSpec": "wwwroot\\Attachments\\2809eebd-a48c-4d2b-b7ab-f94b2fe118b7.jpg"
     },
     {
-      "Identity": "C:\\Users\\MK\\demo\\task-structutre\\BackEndStructuer\\wwwroot\\Attachments\\43a622e2-746b-48a6-b674-33da879dba46.pdf",
+      "Identity": "C:\\Users\\Ali\\Documents\\GitHub\\dxn-web\\dxnapi\\task-structutre\\BackEndStructuer\\wwwroot\\Attachments\\43a622e2-746b-48a6-b674-33da879dba46.pdf",
       "SourceId": "BackEndStructuer",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\MK\\demo\\task-structutre\\BackEndStructuer\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ali\\Documents\\GitHub\\dxn-web\\dxnapi\\task-structutre\\BackEndStructuer\\wwwroot\\",
       "BasePath": "_content/BackEndStructuer",
       "RelativePath": "Attachments/43a622e2-746b-48a6-b674-33da879dba46.pdf",
       "AssetKind": "All",
@@ -74,29 +55,10 @@
       "OriginalItemSpec": "wwwroot\\Attachments\\43a622e2-746b-48a6-b674-33da879dba46.pdf"
     },
     {
-      "Identity": "C:\\Users\\MK\\demo\\task-structutre\\BackEndStructuer\\wwwroot\\Attachments\\67929883-3d72-4e85-87de-dc0bf5c363af.pdf",
+      "Identity": "C:\\Users\\Ali\\Documents\\GitHub\\dxn-web\\dxnapi\\task-structutre\\BackEndStructuer\\wwwroot\\Attachments\\6c37598b-09de-43bb-a564-843c63d6dae0.pdf",
       "SourceId": "BackEndStructuer",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\MK\\demo\\task-structutre\\BackEndStructuer\\wwwroot\\",
-      "BasePath": "_content/BackEndStructuer",
-      "RelativePath": "Attachments/67929883-3d72-4e85-87de-dc0bf5c363af.pdf",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Attachments\\67929883-3d72-4e85-87de-dc0bf5c363af.pdf"
-    },
-    {
-      "Identity": "C:\\Users\\MK\\demo\\task-structutre\\BackEndStructuer\\wwwroot\\Attachments\\6c37598b-09de-43bb-a564-843c63d6dae0.pdf",
-      "SourceId": "BackEndStructuer",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\MK\\demo\\task-structutre\\BackEndStructuer\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ali\\Documents\\GitHub\\dxn-web\\dxnapi\\task-structutre\\BackEndStructuer\\wwwroot\\",
       "BasePath": "_content/BackEndStructuer",
       "RelativePath": "Attachments/6c37598b-09de-43bb-a564-843c63d6dae0.pdf",
       "AssetKind": "All",
@@ -112,29 +74,10 @@
       "OriginalItemSpec": "wwwroot\\Attachments\\6c37598b-09de-43bb-a564-843c63d6dae0.pdf"
     },
     {
-      "Identity": "C:\\Users\\MK\\demo\\task-structutre\\BackEndStructuer\\wwwroot\\Attachments\\73a45ab3-b022-46ff-b10f-05cad133ffa4.pdf",
+      "Identity": "C:\\Users\\Ali\\Documents\\GitHub\\dxn-web\\dxnapi\\task-structutre\\BackEndStructuer\\wwwroot\\Attachments\\7487eaa1-4102-4a9b-9df5-e7f0e89d854a.jpg",
       "SourceId": "BackEndStructuer",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\MK\\demo\\task-structutre\\BackEndStructuer\\wwwroot\\",
-      "BasePath": "_content/BackEndStructuer",
-      "RelativePath": "Attachments/73a45ab3-b022-46ff-b10f-05cad133ffa4.pdf",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Attachments\\73a45ab3-b022-46ff-b10f-05cad133ffa4.pdf"
-    },
-    {
-      "Identity": "C:\\Users\\MK\\demo\\task-structutre\\BackEndStructuer\\wwwroot\\Attachments\\7487eaa1-4102-4a9b-9df5-e7f0e89d854a.jpg",
-      "SourceId": "BackEndStructuer",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\MK\\demo\\task-structutre\\BackEndStructuer\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ali\\Documents\\GitHub\\dxn-web\\dxnapi\\task-structutre\\BackEndStructuer\\wwwroot\\",
       "BasePath": "_content/BackEndStructuer",
       "RelativePath": "Attachments/7487eaa1-4102-4a9b-9df5-e7f0e89d854a.jpg",
       "AssetKind": "All",
@@ -150,10 +93,10 @@
       "OriginalItemSpec": "wwwroot\\Attachments\\7487eaa1-4102-4a9b-9df5-e7f0e89d854a.jpg"
     },
     {
-      "Identity": "C:\\Users\\MK\\demo\\task-structutre\\BackEndStructuer\\wwwroot\\Attachments\\908e4885-e588-4b28-b9f4-8a77bb27542e.pdf",
+      "Identity": "C:\\Users\\Ali\\Documents\\GitHub\\dxn-web\\dxnapi\\task-structutre\\BackEndStructuer\\wwwroot\\Attachments\\908e4885-e588-4b28-b9f4-8a77bb27542e.pdf",
       "SourceId": "BackEndStructuer",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\MK\\demo\\task-structutre\\BackEndStructuer\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ali\\Documents\\GitHub\\dxn-web\\dxnapi\\task-structutre\\BackEndStructuer\\wwwroot\\",
       "BasePath": "_content/BackEndStructuer",
       "RelativePath": "Attachments/908e4885-e588-4b28-b9f4-8a77bb27542e.pdf",
       "AssetKind": "All",
@@ -169,10 +112,10 @@
       "OriginalItemSpec": "wwwroot\\Attachments\\908e4885-e588-4b28-b9f4-8a77bb27542e.pdf"
     },
     {
-      "Identity": "C:\\Users\\MK\\demo\\task-structutre\\BackEndStructuer\\wwwroot\\Attachments\\b443ab9d-4db6-42ac-9652-d7a005a9a807.pdf",
+      "Identity": "C:\\Users\\Ali\\Documents\\GitHub\\dxn-web\\dxnapi\\task-structutre\\BackEndStructuer\\wwwroot\\Attachments\\b443ab9d-4db6-42ac-9652-d7a005a9a807.pdf",
       "SourceId": "BackEndStructuer",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\MK\\demo\\task-structutre\\BackEndStructuer\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ali\\Documents\\GitHub\\dxn-web\\dxnapi\\task-structutre\\BackEndStructuer\\wwwroot\\",
       "BasePath": "_content/BackEndStructuer",
       "RelativePath": "Attachments/b443ab9d-4db6-42ac-9652-d7a005a9a807.pdf",
       "AssetKind": "All",
@@ -188,29 +131,10 @@
       "OriginalItemSpec": "wwwroot\\Attachments\\b443ab9d-4db6-42ac-9652-d7a005a9a807.pdf"
     },
     {
-      "Identity": "C:\\Users\\MK\\demo\\task-structutre\\BackEndStructuer\\wwwroot\\Attachments\\e45682ec-1d28-4dc4-9c75-ccd64917d167.pdf",
+      "Identity": "C:\\Users\\Ali\\Documents\\GitHub\\dxn-web\\dxnapi\\task-structutre\\BackEndStructuer\\wwwroot\\Attachments\\ec142d5a-f66b-4dcb-b470-6a19328f5921.jpg",
       "SourceId": "BackEndStructuer",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\MK\\demo\\task-structutre\\BackEndStructuer\\wwwroot\\",
-      "BasePath": "_content/BackEndStructuer",
-      "RelativePath": "Attachments/e45682ec-1d28-4dc4-9c75-ccd64917d167.pdf",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Attachments\\e45682ec-1d28-4dc4-9c75-ccd64917d167.pdf"
-    },
-    {
-      "Identity": "C:\\Users\\MK\\demo\\task-structutre\\BackEndStructuer\\wwwroot\\Attachments\\ec142d5a-f66b-4dcb-b470-6a19328f5921.jpg",
-      "SourceId": "BackEndStructuer",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\MK\\demo\\task-structutre\\BackEndStructuer\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Ali\\Documents\\GitHub\\dxn-web\\dxnapi\\task-structutre\\BackEndStructuer\\wwwroot\\",
       "BasePath": "_content/BackEndStructuer",
       "RelativePath": "Attachments/ec142d5a-f66b-4dcb-b470-6a19328f5921.jpg",
       "AssetKind": "All",
@@ -224,25 +148,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Attachments\\ec142d5a-f66b-4dcb-b470-6a19328f5921.jpg"
-    },
-    {
-      "Identity": "C:\\Users\\MK\\demo\\task-structutre\\BackEndStructuer\\wwwroot\\Attachments\\eff18b90-c66e-44bd-90ff-394563a63445.pdf",
-      "SourceId": "BackEndStructuer",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\MK\\demo\\task-structutre\\BackEndStructuer\\wwwroot\\",
-      "BasePath": "_content/BackEndStructuer",
-      "RelativePath": "Attachments/eff18b90-c66e-44bd-90ff-394563a63445.pdf",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Attachments\\eff18b90-c66e-44bd-90ff-394563a63445.pdf"
     }
   ]
 }

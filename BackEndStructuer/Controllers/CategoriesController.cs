@@ -1,5 +1,6 @@
 ﻿using BackEndStructuer.DATA.DTOs;
 using BackEndStructuer.DATA.DTOs.Category;
+using BackEndStructuer.Entities;
 using BackEndStructuer.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,16 +18,16 @@ public class CategoriesController : BaseController
 
 
     [HttpGet]
-    public async Task<IActionResult> GetAll([FromQuery] CategoryFilter filter) => Ok(await _categoryService.GetAll(filter) , filter.PageNumber);
+    public async Task<ActionResult<List<CategoryDto>>> GetAll([FromQuery] CategoryFilter filter) => Ok(await _categoryService.GetAll(filter) , filter.PageNumber);
 
     [HttpPost]
-    public async Task<IActionResult> Create([FromForm] CategoryForm categoryForm  , IFormFile Image) => Ok(await _categoryService.add(categoryForm , Image));
+    public async Task<ActionResult<Category>> Create([FromBody] CategoryForm categoryForm) => Ok(await _categoryService.add(categoryForm));
 
     [HttpPut("{id}")]
-    public async Task<IActionResult> Update([FromForm] CategoryFormUpdate categoryFormUpdate, int id) => Ok(await _categoryService.update(categoryFormUpdate,id));
+    public async Task<ActionResult<Category>> Update([FromBody] CategoryFormUpdate categoryFormUpdate, int id) => Ok(await _categoryService.update(categoryFormUpdate,id));
 
     [HttpDelete("{id}")]
-    public async Task<IActionResult> Delete(int id) => Ok(await _categoryService.delete(id));
+    public async Task<ActionResult<Category>> Delete(int id) => Ok(await _categoryService.delete(id));
     
     
  

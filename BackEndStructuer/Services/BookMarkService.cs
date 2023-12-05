@@ -8,7 +8,7 @@ namespace BackEndStructuer.Services;
 
 public interface IBookMarkService
 {
-    Task<(StorageDto? storageDto, string? error)> add(Guid userId, int id);
+    Task<(Bookmark? storageDto, string? error)> add(Guid userId, int id);
     Task<(List<StorageDto> storages, int? totalCount, string? error)> GetAll(Guid id,int _pageNumber = 0);
     
     Task<(Bookmark? bookmark, string? error)> delete(int id);
@@ -26,7 +26,7 @@ public class BookMarkService : IBookMarkService
         _repositoryWrapper = repositoryWrapper;
     }
     
-    public async Task<(StorageDto? storageDto, string? error)> add(Guid userId , int id)
+    public async Task<(Bookmark? storageDto, string? error)> add(Guid userId , int id)
     {
         var user = await _repositoryWrapper.User.GetById(userId);
         if (user == null) return (null , "User not found");
@@ -36,10 +36,7 @@ public class BookMarkService : IBookMarkService
 
         var bookMark = await _repositoryWrapper.BookMark.Get(x => x.StorageId == storage.Id && x.AppUserId == userId);
 
-        await _repositoryWrapper.BookMark.Add(new Bookmark { AppUserId = user.Id, StorageId = storage.Id });
-        
-        
-        var response = _mapper.Map<StorageDto>(storage);
+        var response  = await _repositoryWrapper.BookMark.Add(new Bookmark { AppUserId = user.Id, StorageId = storage.Id });
 
         return response == null ? (null, "Bookmark couldn't be add") : (response, null);
     }

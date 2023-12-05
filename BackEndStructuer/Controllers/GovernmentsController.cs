@@ -1,5 +1,6 @@
 ﻿using BackEndStructuer.DATA.DTOs;
 using BackEndStructuer.DATA.DTOs.Category;
+using BackEndStructuer.Entities;
 using BackEndStructuer.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,16 +18,16 @@ public class GovernmentsController : BaseController
 
 
     [HttpGet]
-    public async Task<IActionResult> GetAll([FromQuery] GovernmentFilter filter) => Ok(await _governmentService.GetAll(filter) , filter.PageNumber);
+    public async Task<ActionResult<List<GovernmentDto>>> GetAll([FromQuery] GovernmentFilter filter) => Ok(await _governmentService.GetAll(filter) , filter.PageNumber);
 
     [HttpPost]
-    public async Task<IActionResult> Create([FromForm] GovernmentForm governmentForm  ) => Ok(await _governmentService.add(governmentForm ));
+    public async Task<ActionResult<Government>> Create([FromBody] GovernmentForm governmentForm  ) => Ok(await _governmentService.add(governmentForm ));
 
     [HttpPut("{id}")]
-    public async Task<IActionResult> Update([FromForm] GovernmentFormUpdate governmentFormUpdate, int id) => Ok(await _governmentService.update(governmentFormUpdate,id));
+    public async Task<ActionResult<Government>> Update([FromBody] GovernmentFormUpdate governmentFormUpdate, int id) => Ok(await _governmentService.update(governmentFormUpdate,id));
 
     [HttpDelete("{id}")]
-    public async Task<IActionResult> Delete(int id) => Ok(await _governmentService.delete(id));
+    public async Task<ActionResult<Government>> Delete(int id) => Ok(await _governmentService.delete(id));
     
     
  

@@ -1,6 +1,7 @@
 ﻿using BackEndStructuer.DATA.DTOs;
 using BackEndStructuer.DATA.DTOs.Category;
 using BackEndStructuer.DATA.DTOs.ReservedStorage;
+using BackEndStructuer.Entities;
 using BackEndStructuer.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,12 +18,12 @@ public class ReservedsController : BaseController
     
     
     [HttpGet]
-    public async Task<IActionResult> GetAll([FromQuery] ReservedStorageFilter filter) => Ok(await _reservedStorageService.GetAll(Id , filter) , filter.PageNumber);
+    public async Task<ActionResult<List<ReservedStorage>>> GetAll([FromQuery] ReservedStorageFilter filter) => Ok(await _reservedStorageService.GetAll(Id , Role , filter) , filter.PageNumber);
 
     [HttpPost("{storageId}")]
-    public async Task<IActionResult> Create([FromForm] ReservedStorageForm reservedStorage , int storageId) => Ok(await _reservedStorageService.add(Id ,storageId ,reservedStorage));
+    public async Task<ActionResult<ReservedStorage>> Create([FromBody] ReservedStorageForm reservedStorage , int storageId) => Ok(await _reservedStorageService.add(Id  , Role,storageId ,reservedStorage));
 
     [HttpPut("{id}")]
-    public async Task<IActionResult> Update([FromForm] ReservedStorageUpdate reservedStorageUpdate, Guid id) => Ok(await _reservedStorageService.update(reservedStorageUpdate,id));
+    public async Task<ActionResult<ReservedStorage>> Update([FromBody] ReservedStorageUpdate reservedStorageUpdate, Guid id) => Ok(await _reservedStorageService.update(Role , reservedStorageUpdate,id));
     
 }

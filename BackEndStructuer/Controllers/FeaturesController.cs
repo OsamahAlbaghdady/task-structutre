@@ -1,5 +1,6 @@
 ﻿using BackEndStructuer.DATA.DTOs;
 using BackEndStructuer.DATA.DTOs.Category;
+using BackEndStructuer.Entities;
 using BackEndStructuer.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,15 +18,15 @@ public class FeaturesController : BaseController
 
 
     [HttpGet]
-    public async Task<IActionResult> GetAll([FromQuery] FeatureFilter filter) => Ok(await _featureService.GetAll(filter) , filter.PageNumber);
+    public async Task<ActionResult<List<FeatureDto>>> GetAll([FromQuery] FeatureFilter filter) => Ok(await _featureService.GetAll(filter) , filter.PageNumber);
 
     [HttpPost]
-    public async Task<IActionResult> Create([FromForm] FeatureForm featureForm  , IFormFile Image) => Ok(await _featureService.add(featureForm , Image));
+    public async Task<ActionResult<Feature>> Create([FromBody] FeatureForm featureForm ) => Ok(await _featureService.add(featureForm));
 
     [HttpPut("{id}")]
-    public async Task<IActionResult> Update([FromForm] FeatureFormUpdate featureFormUpdate, int id) => Ok(await _featureService.update(featureFormUpdate,id));
+    public async Task<ActionResult<Feature>> Update([FromBody] FeatureFormUpdate featureFormUpdate, int id) => Ok(await _featureService.update(featureFormUpdate,id));
 
     [HttpDelete("{id}")]
-    public async Task<IActionResult> Delete(int id) => Ok(await _featureService.delete(id));
+    public async Task<ActionResult<Feature>> Delete(int id) => Ok(await _featureService.delete(id));
     
 }

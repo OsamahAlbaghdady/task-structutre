@@ -9,14 +9,14 @@ namespace NewEppBackEnd.Services
 {
     
     public interface IFileService {
-        Task<(FileDto? file, string? error)> Upload(IFormFile file);
-        Task<(List<FileDto>? files, string? error)> Upload(IFormFile[] files);
+        Task<(string? file , string? error)> Upload(IFormFile file);
+        Task<(List<string>? files , string? error)> Upload(IFormFile[] files);
     }
     
     public class FileService  : IFileService
     {
 
-        public async Task<(FileDto? file, string? error)> Upload(IFormFile file) {
+        public async Task<(string? file , string? error)> Upload(IFormFile file) {
             var id = Guid.NewGuid();
             var extension = Path.GetExtension(file.FileName);
             var fileName = $"{id}{extension}";
@@ -30,21 +30,17 @@ namespace NewEppBackEnd.Services
             await using var stream = new FileStream(path, FileMode.Create);
             await file.CopyToAsync(stream);
             var filePath = Path.Combine("Attachments", fileName);
-            var fileDto = new FileDto {
-                Path = filePath,
-            };
-            return (fileDto, null);
+            return (filePath , null);
         }
-        public async Task<(List<FileDto>? files, string? error)> Upload(IFormFile[] files)
+        public async Task<(List<string> files , string? error)> Upload(IFormFile[] files)
         {
-            var fileDtos = new List<FileDto>();
+            var fileList = new List<string>();
             foreach (var file in files)
-            {
-                var (fileDto, error) = await Upload(file);
-                if (error != null) return (null, error);
-                fileDtos.Add(fileDto!);
+            { 
+                var fileToAdd = await Upload(file);
+                fileList.Add(fileToAdd.file!);
             }
-            return (fileDtos, null);
+            return (fileList , null);
         }
     }
 }

@@ -29,6 +29,7 @@ public class StorageForm
     [Required]
     public int CategoryId { get; set; }
     
-    [Required] public IFormFile[] Files { get; set; }
+    [Required] 
+    public List<string> Files { get; set; }
 
 }

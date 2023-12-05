@@ -10,10 +10,10 @@ namespace BackEndStructuer.Services;
 
 public interface ICategoryService
 {
-   Task<(CategoryDto?, string? error)> add(CategoryForm categoryForm , IFormFile Image );
+   Task<(Category?, string? error)> add(CategoryForm categoryForm );
    Task<(List<CategoryDto> categories, int? totalCount, string? error)> GetAll(CategoryFilter filter);
-   Task<(CategoryDto? category, string? error)> update(CategoryFormUpdate categoryUpdate , int id);
-   Task<(CategoryDto? category, string? error)> delete(int id);
+   Task<(Category? category, string? error)> update(CategoryFormUpdate categoryUpdate , int id);
+   Task<(Category? category, string? error)> delete(int id);
 }
 
 public class CategoryService : ICategoryService
@@ -34,41 +34,35 @@ public class CategoryService : ICategoryService
    }
    
    
-   public async Task<(CategoryDto?, string? error)> add(CategoryForm categoryForm , IFormFile Image )
+   public async Task<(Category?, string? error)> add(CategoryForm categoryForm )
    {
-      var image =  _fileService.Upload(Image);
-      if (image == null) return (null , "can't upload this file");
       var category = _mapper.Map<Category>(categoryForm);
-      category.Image = image.Result.file.Path;
       var result = await _repositoryWrapper.Category.Add(category);
-      var map = _mapper.Map<CategoryDto>(category);
-      return result == null ? (null , "category couldn't add") : (map , null);
+      return result == null ? (null , "category couldn't add") : (result , null);
    }
 
    public async Task<(List<CategoryDto> categories, int? totalCount, string? error)> GetAll(CategoryFilter filter)
    {
       var (categories, totalCount) = await _repositoryWrapper.Category.GetAll<CategoryDto>( x=> (
          filter.Name == null || x.Name.Contains(filter.Name)
-         ),filter.PageNumber);
+         ),filter.PageNumber , filter.PageSize);
       return (categories, totalCount, null);
    }
 
-   public async Task<(CategoryDto? category, string? error)> update(CategoryFormUpdate categoryUpdate, int id)
+   public async Task<(Category? category, string? error)> update(CategoryFormUpdate categoryUpdate, int id)
    {
       var category = await _repositoryWrapper.Category.GetById(id);
       if (category == null) return (null, "category not found "); 
       category = _mapper.Map(categoryUpdate , category);
       var response = await _repositoryWrapper.Category.Update(category);
-      var map = _mapper.Map<CategoryDto>(category);
-      return response == null ? (null , "category couldn't update") : (map , null);
+      return response == null ? (null , "category couldn't update") : (response , null);
    }
 
-   public async Task<(CategoryDto? category, string? error)> delete(int id)
+   public async Task<(Category? category, string? error)> delete(int id)
    {
       var category = await _repositoryWrapper.Category.GetById(id);
       if (category == null) return (null, "category not found ");
       var result = await _repositoryWrapper.Category.Delete(id);
-      var map = _mapper.Map<CategoryDto>(category);
-      return result == null ? (null, "category could not be deleted") : (map, null);
+      return result == null ? (null, "category could not be deleted") : (result, null);
    }
 }

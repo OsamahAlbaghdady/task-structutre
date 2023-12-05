@@ -1,4 +1,6 @@
-﻿namespace BackEndStructuer.Entities;
+﻿using System.Collections;
+
+namespace BackEndStructuer.Entities;
 
 public class Storage : BaseEntity<int>
 {
@@ -35,6 +37,8 @@ public class Storage : BaseEntity<int>
     public ICollection<StorageFile>? Files { get; set; } = new List<StorageFile>();
 
     public ICollection<Bookmark>? UserStorageBookMarks { get; set; } = new List<Bookmark>();
+
+    public ICollection<ReservedStorage> ReservedStorages { get; set; }
 
 
 }

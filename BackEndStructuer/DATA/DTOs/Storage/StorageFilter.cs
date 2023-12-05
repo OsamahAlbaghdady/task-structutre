@@ -22,7 +22,8 @@ public class StorageFilter : BaseFilter
 
     public bool? IsReserved { get; set; }
     public bool? IsOwner { get; set; }
-    
+
+    public bool? IsInReserved { get; set; }
     public int? GovernmentId { get; set; }
     
     public int? CategoryId { get; set; }

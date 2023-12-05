@@ -52,11 +52,13 @@ namespace BackEndStructuer.Helpers
 
             CreateMap<ReservedStorage , ReservedStorageDto>();
             CreateMap<ReservedStorageUpdate , ReservedStorage>();
-            
+            CreateMap<ReservedStorageForm, ReservedStorage>();
+
+            CreateMap<string , StorageFile>().ForMember(dis => dis.File , src=> src.ToString());
             
             CreateMap<RatingStorage, RatingStorageDto>();
             CreateMap<RatingStorageForm, RatingStorage>();
-            CreateMap<RatingStorageForm, RatingStorage>();
+            CreateMap<RatingStorageUpdate, RatingStorage>();
             
 
         }
