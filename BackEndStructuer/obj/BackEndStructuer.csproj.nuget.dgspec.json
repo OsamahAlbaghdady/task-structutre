@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Ali\\Documents\\GitHub\\dxn-web\\dxnapi\\task-structutre\\BackEndStructuer\\BackEndStructuer.csproj": {}
+    "C:\\Users\\MK\\demo\\task-structutre\\BackEndStructuer\\BackEndStructuer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Ali\\Documents\\GitHub\\dxn-web\\dxnapi\\task-structutre\\BackEndStructuer\\BackEndStructuer.csproj": {
+    "C:\\Users\\MK\\demo\\task-structutre\\BackEndStructuer\\BackEndStructuer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ali\\Documents\\GitHub\\dxn-web\\dxnapi\\task-structutre\\BackEndStructuer\\BackEndStructuer.csproj",
+        "projectUniqueName": "C:\\Users\\MK\\demo\\task-structutre\\BackEndStructuer\\BackEndStructuer.csproj",
         "projectName": "BackEndStructuer",
-        "projectPath": "C:\\Users\\Ali\\Documents\\GitHub\\dxn-web\\dxnapi\\task-structutre\\BackEndStructuer\\BackEndStructuer.csproj",
-        "packagesPath": "C:\\Users\\Ali\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ali\\Documents\\GitHub\\dxn-web\\dxnapi\\task-structutre\\BackEndStructuer\\obj\\",
+        "projectPath": "C:\\Users\\MK\\demo\\task-structutre\\BackEndStructuer\\BackEndStructuer.csproj",
+        "packagesPath": "C:\\Users\\MK\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\MK\\demo\\task-structutre\\BackEndStructuer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Ali\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\MK\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -47,6 +47,18 @@
             "BCrypt.Net": {
               "target": "Package",
               "version": "[0.1.0, )"
+            },
+            "Hangfire": {
+              "target": "Package",
+              "version": "[1.8.6, )"
+            },
+            "Hangfire.Core": {
+              "target": "Package",
+              "version": "[1.8.6, )"
+            },
+            "Hangfire.PostgreSql": {
+              "target": "Package",
+              "version": "[1.20.4, )"
             },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
@@ -86,6 +98,10 @@
               "target": "Package",
               "version": "[6.4.0, )"
             },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.5, )"
+            },
             "TextExtensions": {
               "target": "Package",
               "version": "[1.0.0, )"
@@ -102,6 +118,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[7.0.14, 7.0.14]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[7.0.14, 7.0.14]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[7.0.14, 7.0.14]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[7.0.14, 7.0.14]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"

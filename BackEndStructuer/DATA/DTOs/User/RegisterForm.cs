@@ -18,11 +18,6 @@ namespace BackEndStructuer.DATA.DTOs.User
         [Required]
         public int? Role { get; set; }
 
-        [Required]
-        public double? Lat { get; set; }
-        
-        [Required]
-        public double? Lng { get; set; }
 
     }
 }

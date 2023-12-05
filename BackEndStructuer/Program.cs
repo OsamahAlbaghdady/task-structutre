@@ -4,6 +4,9 @@ using BackEndStructuer.Extensions;
 using BackEndStructuer.Helpers;
 using BackEndStructuer.Repository;
 using BackEndStructuer.Schedule;
+using Hangfire;
+using Hangfire.Common;
+using Hangfire.PostgreSql;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Serilog;
@@ -48,6 +51,15 @@ builder.Services.AddSwaggerGen(options =>
 });
 builder.Services.AddIdentityServices(builder.Configuration);
 builder.Services.AddApplicationServices(builder.Configuration);
+
+builder.Services.AddHangfire((sp, config) =>
+{
+    var connection = sp.GetRequiredService<IConfiguration>().GetConnectionString("DefaultConnection");
+    config.UsePostgreSqlStorage(connection);
+    
+});
+builder.Services.AddHangfireServer();
+
 builder.Services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
 IConfiguration configuration = builder.Configuration;
 ConfigurationProvider.Configuration = configuration;
@@ -69,7 +81,7 @@ app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 app.UseStaticFiles();
-
+app.UseHangfireDashboard();
 app.MapControllers();
 
 using (var scope = app.Services.CreateScope())
@@ -80,5 +92,6 @@ using (var scope = app.Services.CreateScope())
     var notifyEndReserved = new NotifyEndReserved( TimeSpan.FromMilliseconds(1000) ,repositoryWrapper);
     notifyEndReserved.Start();
 }
+
 
 app.Run();

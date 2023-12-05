@@ -11,6 +11,7 @@ using BackEndStructuer.Helpers.OneSignal;
 using BackEndStructuer.Interface;
 using BackEndStructuer.Repository;
 using BackEndStructuer.Services;
+using Hangfire;
 using NewEppBackEnd.Services;
 
 namespace BackEndStructuer.Extensions

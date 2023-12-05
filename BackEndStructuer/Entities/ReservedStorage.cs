@@ -1,4 +1,6 @@
-﻿namespace BackEndStructuer.Entities;
+﻿using BackEndStructuer.Utils.Enums;
+
+namespace BackEndStructuer.Entities;
 
 public class ReservedStorage : BaseEntity<Guid>
 {
@@ -19,5 +21,7 @@ public class ReservedStorage : BaseEntity<Guid>
     public DateTime? StartDate { get; set; }
 
     public DateTime? EndDate { get; set; }
-    
+
+    public ReserveState? State { get; set; }
+
 }
